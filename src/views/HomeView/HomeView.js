@@ -1,7 +1,10 @@
+import { Container } from "common";
+import { Slider } from "components";
+
 export default function HomeView() {
   return (
-    <>
-      <h1>Home View</h1>
-    </>
+    <Container>
+      <Slider />
+    </Container>
   );
 }

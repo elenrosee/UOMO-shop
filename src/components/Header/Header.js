@@ -1,11 +1,5 @@
 import { LogoSvg } from "icons";
-import {
-  HeartSvg,
-  LoupeSvg,
-  NavIconSvg,
-  ShoppingBagSvg,
-  UserSvg,
-} from "../../icons";
+import { HeartSvg, LoupeSvg, NavIconSvg, ShoppingBagSvg, UserSvg } from "icons";
 import {
   HeaderWraper,
   PageNavLink,
@@ -17,8 +11,8 @@ import {
 export const Header = () => {
   return (
     <HeaderWraper>
-      <LogoSvg />
       <PageNavLinkMenu>
+        <LogoSvg />
         <PageNavLink to="/home">HOME</PageNavLink>
         <PageNavLink to="/shop">SHOP</PageNavLink>
         <PageNavLink to="/colection">COLLECTION</PageNavLink>
