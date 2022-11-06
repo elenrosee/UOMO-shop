@@ -1,12 +1,12 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { FollowUs } from "./FollowUs";
 
-import { images } from "images";
-import { Arrows } from "./Arrows";
+import { images } from "data/sliderData";
+// import { Arrows } from './Arrows'
 import { Dots } from "./Dots";
 import { SlidesList } from "./SlidesList";
 
-import { SliderWraper } from "./Slider.styled";
+import { SliderContainer, SliderWraper } from "./Slider.styled";
 
 export const SliderContext = createContext();
 
@@ -90,7 +90,7 @@ export const Slider = function ({
   }, [items.length, slide, autoPlay, autoPlayTime, changeSlide]); // when images uploaded or slide changed manually we start timer
 
   return (
-    <div>
+    <SliderContainer>
       <FollowUs />
       <SliderWraper
         onTouchStart={handleTouchStart}
@@ -105,12 +105,12 @@ export const Slider = function ({
             items,
           }}
         >
-          <Arrows />
+          {/* <Arrows /> */}
           <SlidesList />
           <Dots />
         </SliderContext.Provider>
       </SliderWraper>
-    </div>
+    </SliderContainer>
   );
 };
 

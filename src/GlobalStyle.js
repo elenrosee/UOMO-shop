@@ -28,6 +28,9 @@ html {
 }
 
 body {
+min-width: 1920px;
+
+
   font-family: 'Josefin Sans', sans-serif;
 
   font-weight: 400;

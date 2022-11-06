@@ -4,11 +4,9 @@ import { Container } from "common";
 
 export const HeaderWraper = styled(Container)`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 
-  width: 1400px;
   height: 36px;
-
   margin: 30px 0 20px;
 `;
 

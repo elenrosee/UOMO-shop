@@ -1,11 +1,39 @@
 import { useContext } from "react";
+import styled from "styled-components";
 import { SliderContext } from "./Slider";
 
-const style = {
-  width: "40px",
-  height: "40px",
-  margin: "10px",
-};
+const style = {};
+
+const DotsContainer = styled.div`
+  position: absolute;
+
+  left: 195px;
+  bottom: 60px;
+`;
+
+const Dot = styled.button`
+  margin: 10px;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+
+  & span {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 30%);
+  }
+
+  &.selected {
+    border: 2px solid black;
+    border-radius: 100px;
+
+    & span {
+      background-color: rgba(0, 0, 0, 100%);
+    }
+  }
+`;
 
 export const Dots = () => {
   const { slidesCount, goToSlide, slideNumber } = useContext(SliderContext);
@@ -14,20 +42,20 @@ export const Dots = () => {
     const dots = [];
     for (let i = 0; i < slidesCount; i++) {
       dots.push(
-        <button
+        <Dot
           key={`dot-${i}`}
           type={"radio"}
           style={style}
-          className={`dot ${slideNumber === i ? "selected" : ""}`}
+          className={`${slideNumber === i ? "selected" : ""}`}
           onClick={() => goToSlide(i)}
         >
-          <p>{i}</p>
-        </button>
+          <span></span>
+        </Dot>
       );
     }
 
     return dots;
   };
 
-  return <div className="dots">{renderDots()}</div>;
+  return <DotsContainer>{renderDots()}</DotsContainer>;
 };
