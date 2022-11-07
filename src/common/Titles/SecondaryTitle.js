@@ -23,7 +23,7 @@ const TitleWrapper = styled.div`
   display: flex;
 `;
 
-const Title = styled.h2`
+const Title = styled.h4`
   text-transform: uppercase;
   font-weight: 400;
   font-size: 26px;

@@ -33,11 +33,15 @@ const Description = styled.p`
   }
 `;
 
-const Title = styled.h2`
+export const Title = styled.h2`
   text-transform: uppercase;
   font-weight: 400;
   font-size: 70px;
   line-height: 80px;
+`;
+
+export const AccentTitle = styled(Title)`
+  font-weight: 700;
 `;
 
 const SlideLink = styled(NavLink)`
@@ -54,10 +58,6 @@ const SlideLink = styled(NavLink)`
     left: 0;
     bottom: -2px;
   }
-`;
-
-const AccentTitle = styled(Title)`
-  font-weight: 700;
 `;
 
 export const MainTitle = ({ description, title, accentTitle, link }) => {
