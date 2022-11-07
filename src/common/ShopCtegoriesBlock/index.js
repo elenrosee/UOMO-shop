@@ -1,0 +1,1 @@
+export { ShopCtegoriesBlock } from "./ShopCtegoriesBlock";

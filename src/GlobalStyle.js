@@ -28,7 +28,7 @@ html {
 }
 
 body {
-min-width: 1920px;
+min-width: 1000px;
 
 
   font-family: 'Josefin Sans', sans-serif;

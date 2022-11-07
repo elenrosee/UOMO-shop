@@ -113,13 +113,3 @@ export const Slider = function ({
     </SliderContainer>
   );
 };
-
-// export const Slider = () => {
-//   return (
-//     <SliderContainer>
-//       <FollowUs />
-//       <img src={images[0]} alt={'some'} />
-//       <h2>Slider</h2>
-//     </SliderContainer>
-//   )
-// }
