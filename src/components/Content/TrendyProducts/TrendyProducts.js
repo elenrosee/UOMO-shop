@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Products } from "./Products";
 import { SectionsList } from "./SectionsList";
 import {
   AccentTitle,
@@ -25,9 +26,6 @@ export const TrendyProducts = () => {
   //   }, [])
 
   const onClick = (e) => {
-    console.log(e.currentTarget.name);
-    console.log("click on batton");
-
     setSelectedSection(e.currentTarget.name);
   };
 
@@ -38,6 +36,7 @@ export const TrendyProducts = () => {
         <AccentTitle>PRODUCTS</AccentTitle>
       </TitleWrapper>
       <SectionsList onClick={onClick} selectedSection={selectedSection} />
+      <Products />
     </TrendyProductsContainer>
   );
 };

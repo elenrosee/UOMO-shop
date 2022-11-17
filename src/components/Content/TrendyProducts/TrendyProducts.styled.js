@@ -38,6 +38,7 @@ export const SectionName = styled.li`
 
 export const SectionButton = styled.button`
   font-size: 16px;
+  text-transform: uppercase;
   line-height: 22px;
   color: #767676;
 
