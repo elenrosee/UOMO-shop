@@ -7,7 +7,7 @@ export const images = [
   {
     url: pinkGirl,
     title: "summer sale stylish",
-    accentTitle: "for yougn only",
+    accentTitle: "WOMENS",
     description: "new trend",
     link: "/colection",
   },

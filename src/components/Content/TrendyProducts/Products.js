@@ -13,15 +13,17 @@ export const ProductPrice = styled.p``;
 
 export const ProductCategory = styled.p``;
 
-export const Products = () => {
+export const Products = ({ items }) => {
   return (
     <ProductsList>
-      <ProductItem>
-        <ProductImg />
-        <ProductCategory>Dresses</ProductCategory>
-        <ProductName>Cropped Faux Leather Jacket</ProductName>
-        <ProductPrice>$29</ProductPrice>
-      </ProductItem>
+      {items.map(({ url, alt, category, name, link, price }, index) => (
+        <ProductItem key={index}>
+          <ProductImg src={url} alt={alt} />
+          <ProductCategory>{category}</ProductCategory>
+          <ProductName>{name}</ProductName>
+          <ProductPrice>{price}</ProductPrice>
+        </ProductItem>
+      ))}
     </ProductsList>
   );
 };
