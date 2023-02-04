@@ -13,6 +13,7 @@ function App() {
       <Header />
       <Suspense fallback={<h2>loading...</h2>}>
         <Routes>
+          <Route path="/" exact element={<HomeView />} />
           <Route path="/home" exact element={<HomeView />} />
           <Route path="/shop" exact element={<ShopListView />} />
         </Routes>

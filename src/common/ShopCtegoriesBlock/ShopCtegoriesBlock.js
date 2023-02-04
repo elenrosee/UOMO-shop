@@ -1,31 +1,6 @@
 import styled from "styled-components";
 import { SecondaryTitle } from "../Titles/SecondaryTitle";
 
-// data = {
-//     url: cap,
-//     alt: 'women cap',
-//     title: 'colection',
-//     accentTitle: 'women',
-//     description: 'hot list',
-//     link: '/colection',
-//   },
-// {
-//     url: cap,
-//     alt: 'women cap',
-//     title: 'CARDS',
-//     accentTitle: 'E-GIFT',
-//     text: 'some text',
-//     link: '/colection',
-//     linkText: 'discover more',
-//   }}
-
-// settings = {
-//     width: '20px'
-//     heigth: '40px'
-//     color: '#fff'
-//     imgWidth: '40px'
-// }
-
 export const BlockContainer = styled.div`
   width: ${({ width }) => width};
   height: ${({ heigth }) => heigth};

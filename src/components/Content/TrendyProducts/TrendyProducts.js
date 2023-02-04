@@ -3,6 +3,8 @@ import { Products } from "./Products";
 import { SectionsList } from "./SectionsList";
 import {
   AccentTitle,
+  LinkWraper,
+  SeeAllProductsLink,
   Title,
   TitleWrapper,
   TrendyProductsContainer,
@@ -47,6 +49,9 @@ export const TrendyProducts = () => {
         sectionsName={sectionsName}
       />
       <Products items={items} />
+      <LinkWraper>
+        <SeeAllProductsLink to="/colection">SEE ALL PRODUCT</SeeAllProductsLink>
+      </LinkWraper>
     </TrendyProductsContainer>
   );
 };

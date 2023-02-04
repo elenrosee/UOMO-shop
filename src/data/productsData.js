@@ -4,6 +4,7 @@ import tshirt1 from "../images/tshirt1.jpg";
 
 export const productsData = [
   {
+    id: 1,
     url: cap,
     alt: "women cap",
     category: "dresses",
@@ -23,6 +24,7 @@ export const productsData = [
     addedDate: "03.02.2023",
   },
   {
+    id: 2,
     url: tshirt,
     alt: "women cap",
     category: "dresses",
@@ -42,6 +44,7 @@ export const productsData = [
     addedDate: "03.02.2023",
   },
   {
+    id: 3,
     url: tshirt1,
     alt: "women cap",
     category: "dresses",
@@ -61,6 +64,7 @@ export const productsData = [
     addedDate: "03.02.2023",
   },
   {
+    id: 4,
     url: tshirt1,
     alt: "women cap",
     category: "dresses",
@@ -80,6 +84,7 @@ export const productsData = [
     addedDate: "03.02.2023",
   },
   {
+    id: 5,
     url: tshirt1,
     alt: "women cap",
     category: "dresses",
@@ -99,6 +104,7 @@ export const productsData = [
     addedDate: "03.02.2023",
   },
   {
+    id: 6,
     url: tshirt1,
     alt: "women cap",
     category: "dresses",
@@ -118,6 +124,7 @@ export const productsData = [
     addedDate: "03.02.2023",
   },
   {
+    id: 7,
     url: tshirt1,
     alt: "women cap",
     category: "dresses",
@@ -137,6 +144,8 @@ export const productsData = [
     addedDate: "03.02.2023",
   },
   {
+    id: 8,
+
     url: tshirt1,
     alt: "women cap",
     category: "dresses",
