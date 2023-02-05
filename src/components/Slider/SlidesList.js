@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { SliderContext } from "./Slider";
-import { MainTitle } from "common";
+import { Breakpoints, MQ } from "common";
 
 import styled from "styled-components";
+import { SliderTitle } from "./SliderTitle";
 
 const SlideList = styled.div`
   display: flex;
@@ -13,8 +14,12 @@ const SlideList = styled.div`
 `;
 const SlideWraper = styled.div`
   flex: 1 0 100%;
-  height: 800px;
+  height: 600px;
   position: relative;
+
+  ${MQ(Breakpoints.md)} {
+    height: 800px;
+  }
 `;
 const SlideImg = styled.img`
   display: block;
@@ -32,7 +37,7 @@ export const SlidesList = () => {
       {items.map(({ url, title, accentTitle, description, link }, index) => (
         <SlideWraper key={index}>
           <SlideImg src={url} alt={title} />
-          <MainTitle
+          <SliderTitle
             description={description}
             title={title}
             accentTitle={accentTitle}

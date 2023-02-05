@@ -2,11 +2,12 @@ import { createContext, useCallback, useEffect, useState } from "react";
 import { FollowUs } from "./FollowUs";
 
 import { images } from "data/sliderData";
-// import { Arrows } from './Arrows'
 import { Dots } from "./Dots";
 import { SlidesList } from "./SlidesList";
 
 import { SliderContainer, SliderWraper } from "./Slider.styled";
+import { useMediaQuery } from "react-responsive";
+import { Breakpoints } from "common";
 
 export const SliderContext = createContext();
 
@@ -89,9 +90,11 @@ export const Slider = function ({
     };
   }, [items.length, slide, autoPlay, autoPlayTime, changeSlide]); // when images uploaded or slide changed manually we start timer
 
+  const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
+
   return (
     <SliderContainer>
-      <FollowUs />
+      {isDesctop && <FollowUs />}
       <SliderWraper
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -105,7 +108,6 @@ export const Slider = function ({
             items,
           }}
         >
-          {/* <Arrows /> */}
           <SlidesList />
           <Dots />
         </SliderContext.Provider>

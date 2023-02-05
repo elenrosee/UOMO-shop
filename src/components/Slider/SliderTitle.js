@@ -1,3 +1,4 @@
+import { Breakpoints, MQ } from "common";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -6,10 +7,16 @@ const TitleContainer = styled.div`
   flex-direction: column;
 
   position: absolute;
-  top: 290px;
-  left: 195px;
+
+  top: 230px;
+  left: 30px;
 
   text-transform: uppercase;
+
+  ${MQ(Breakpoints.md)} {
+    top: 290px;
+    left: 195px;
+  }
 `;
 
 const Description = styled.p`
@@ -36,8 +43,13 @@ const Description = styled.p`
 export const Title = styled.h2`
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 70px;
-  line-height: 80px;
+  font-size: 30px;
+  line-height: 40px;
+
+  ${MQ(Breakpoints.md)} {
+    font-size: 70px;
+    line-height: 80px;
+  }
 `;
 
 export const AccentTitle = styled(Title)`
@@ -60,7 +72,7 @@ const SlideLink = styled(NavLink)`
   }
 `;
 
-export const MainTitle = ({ description, title, accentTitle, link }) => {
+export const SliderTitle = ({ description, title, accentTitle, link }) => {
   return (
     <TitleContainer>
       <Description>{description}</Description>

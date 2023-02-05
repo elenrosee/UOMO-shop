@@ -29,7 +29,7 @@ html {
 }
 
 body {
-min-width: 1000px;
+min-width: 414px;
 
 
   font-family: 'Josefin Sans', sans-serif;

@@ -1,13 +1,20 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Container } from "common";
+import { Breakpoints, Container, MQ } from "common";
 
 export const HeaderWraper = styled(Container)`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 
-  height: 36px;
-  margin: 30px 0 20px;
+  padding: 15px;
+
+  ${MQ(Breakpoints.md)} {
+    justify-content: space-around;
+
+    height: 36px;
+    padding: 30px 0 20px;
+  }
 `;
 
 export const PageNavLinkMenu = styled.div`

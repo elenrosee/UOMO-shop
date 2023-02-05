@@ -1,3 +1,4 @@
+import { Breakpoints, MQ } from "common";
 import { useContext } from "react";
 import styled from "styled-components";
 import { SliderContext } from "./Slider";
@@ -7,8 +8,13 @@ const style = {};
 const DotsContainer = styled.div`
   position: absolute;
 
-  left: 195px;
-  bottom: 60px;
+  left: 30px;
+  bottom: 30px;
+
+  ${MQ(Breakpoints.md)} {
+    left: 195px;
+    bottom: 60px;
+  }
 `;
 
 const Dot = styled.button`
