@@ -8,8 +8,9 @@ const style = {};
 const DotsContainer = styled.div`
   position: absolute;
 
+  margin: -15px;
   left: 30px;
-  bottom: 30px;
+  bottom: 45px;
 
   ${MQ(Breakpoints.md)} {
     left: 195px;

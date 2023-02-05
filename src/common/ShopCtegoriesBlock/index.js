@@ -1,1 +1,0 @@
-export { ShopCtegoriesBlock } from "./ShopCtegoriesBlock";

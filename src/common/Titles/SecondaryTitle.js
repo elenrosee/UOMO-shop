@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { NavLink } from "react-router-dom";
+import { Breakpoints, MQ } from "common/Breakpoints";
 
 const TitleContainer = styled.div`
   display: flex;
@@ -10,9 +11,13 @@ const TitleContainer = styled.div`
   left: 0;
   bottom: 0;
 
-  margin: 40px;
+  margin: 30px;
 
   text-transform: uppercase;
+
+  ${MQ(Breakpoints.md)} {
+    margin: 40px;
+  }
 `;
 
 const Description = styled.span`
@@ -21,14 +26,25 @@ const Description = styled.span`
 `;
 const TitleWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+
+  ${MQ(Breakpoints.md)} {
+    flex-direction: row;
+  }
 `;
 
 const Title = styled.h4`
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 26px;
-  line-height: 36px;
+  font-size: 22px;
+  line-height: 30px;
+
+  ${MQ(Breakpoints.md)} {
+    font-size: 26px;
+    line-height: 36px;
+  }
 `;
+
 const Text = styled.p`
   text-transform: none;
 `;

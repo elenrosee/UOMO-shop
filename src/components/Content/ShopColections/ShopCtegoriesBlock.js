@@ -1,5 +1,5 @@
+import { Breakpoints, MQ, SecondaryTitle } from "common";
 import styled from "styled-components";
-import { SecondaryTitle } from "../Titles/SecondaryTitle";
 
 export const BlockContainer = styled.div`
   width: ${({ width }) => width};
@@ -12,7 +12,11 @@ export const BlockContainer = styled.div`
 
   position: relative;
 
-  margin: 15px;
+  margin-bottom: 15px;
+
+  ${MQ(Breakpoints.md)} {
+    margin: 15px;
+  }
 `;
 
 export const ColectionImage = styled.img`
