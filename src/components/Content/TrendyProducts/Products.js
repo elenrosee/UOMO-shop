@@ -17,7 +17,8 @@ export const ProductsList = styled.ul`
 
 export const ProductItem = styled.li`
   margin: 7px;
-  width: 185px;
+  width: calc(100vw / 2 - 14px);
+  min-width: 150px;
   height: 292px;
 
   ${MQ(Breakpoints.md)} {
