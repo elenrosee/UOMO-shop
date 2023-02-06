@@ -1,4 +1,5 @@
 import { Breakpoints, MQ, SecondaryTitle } from "common";
+import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 
 export const BlockContainer = styled.div`
@@ -28,8 +29,11 @@ export const ColectionImage = styled.img`
 `;
 
 export const ShopCtegoriesBlock = ({ data, settings }) => {
-  const { width, heigth, color, img = false, imgWidth } = settings;
-  const { url, alt, description, title, accentTitle, link, text, linkText } =
+  const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
+  const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
+
+  const { width, heigth, color, isImg = false, imgWidth } = settings;
+  const { img, mobImg, description, title, accentTitle, link, text, linkText } =
     data;
 
   return (
@@ -42,7 +46,12 @@ export const ShopCtegoriesBlock = ({ data, settings }) => {
         link={link}
         linkText={linkText}
       />
-      {img && <ColectionImage alt={alt} src={url} width={imgWidth} />}
+      {isImg && isDesctop && (
+        <ColectionImage alt={img} src={img} width={imgWidth} />
+      )}
+      {isImg && isMobile && (
+        <ColectionImage alt={mobImg} src={img} width={imgWidth} />
+      )}
     </BlockContainer>
   );
 };

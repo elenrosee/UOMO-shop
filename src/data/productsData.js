@@ -1,11 +1,15 @@
 import cap from "../images/cap.jpg";
+import capMob from "../images/cap_mob.jpg";
 import tshirt from "../images/tshirt.jpg";
+import tshirtMob from "../images/tshirt_mob.jpg";
 import tshirt1 from "../images/tshirt1.jpg";
+import tshirt1Mob from "../images/tshirt1_mob.jpg";
 
 export const productsData = [
   {
     id: 1,
-    url: cap,
+    img: cap,
+    mobImg: capMob,
     alt: "women cap",
     category: "dresses",
     name: "Cropped Faux Leather Jacket",
@@ -25,7 +29,8 @@ export const productsData = [
   },
   {
     id: 2,
-    url: tshirt,
+    img: tshirt,
+    mobImg: tshirtMob,
     alt: "women cap",
     category: "dresses",
     name: "Calvin Shorts",
@@ -45,7 +50,8 @@ export const productsData = [
   },
   {
     id: 3,
-    url: tshirt1,
+    img: tshirt1,
+    mobImg: tshirt1Mob,
     alt: "women cap",
     category: "dresses",
     name: "Kirby T-Shirt",
@@ -65,7 +71,8 @@ export const productsData = [
   },
   {
     id: 4,
-    url: tshirt1,
+    img: tshirt1,
+    mobImg: tshirt1Mob,
     alt: "women cap",
     category: "dresses",
     name: "Cableknit Shawl",
@@ -85,7 +92,8 @@ export const productsData = [
   },
   {
     id: 5,
-    url: tshirt1,
+    img: tshirt1,
+    mobImg: tshirt1Mob,
     alt: "women cap",
     category: "dresses",
     name: "Colorful Jacket",
@@ -105,7 +113,8 @@ export const productsData = [
   },
   {
     id: 6,
-    url: tshirt1,
+    img: tshirt1,
+    mobImg: tshirt1Mob,
     alt: "women cap",
     category: "dresses",
     name: "Shirt In Botanical Cheetah Print",
@@ -125,7 +134,8 @@ export const productsData = [
   },
   {
     id: 7,
-    url: tshirt1,
+    img: tshirt1,
+    mobImg: tshirt1Mob,
     alt: "women cap",
     category: "dresses",
     name: "Cotton Jersey T-Shirt",
@@ -145,8 +155,8 @@ export const productsData = [
   },
   {
     id: 8,
-
-    url: tshirt1,
+    img: tshirt1,
+    mobImg: tshirt1Mob,
     alt: "women cap",
     category: "dresses",
     name: "Zessi Dresses",

@@ -10,6 +10,7 @@ export const TrendyProductsContainer = styled.div`
 export const TitleWrapper = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 
   margin-bottom: 15px;
 

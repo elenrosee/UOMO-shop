@@ -1,3 +1,4 @@
+import { Breakpoints } from "common";
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle` 
@@ -29,7 +30,7 @@ html {
 }
 
 body {
-min-width: 414px;
+min-width: ${Breakpoints.sm}px;
 
 
   font-family: 'Josefin Sans', sans-serif;

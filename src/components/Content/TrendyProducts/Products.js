@@ -1,4 +1,6 @@
+import { Breakpoints } from "common";
 import { HeartSvg } from "icons";
+import { useMediaQuery } from "react-responsive";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -54,12 +56,27 @@ export const ProductPrice = styled.p`
 `;
 
 export const Products = ({ items }) => {
+  const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
+  const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
+
   return (
     <ProductsList>
       {items.map(
-        ({ url, alt, category, name, link, price, onSale, discount, id }) => (
+        ({
+          img,
+          mobImg,
+          alt,
+          category,
+          name,
+          link,
+          price,
+          onSale,
+          discount,
+          id,
+        }) => (
           <ProductItem key={id}>
-            <ProductImg src={url} alt={alt} />
+            {isMobile && <ProductImg src={mobImg} alt={alt} />}
+            {isDesctop && <ProductImg src={img} alt={alt} />}
             <Wrapper>
               <ProductCategory>{category}</ProductCategory>
               <HeartSvg fill={"var(--secondary-text-color)"} />

@@ -1,10 +1,14 @@
 import cap from "../images/cap.jpg";
+import capMob from "../images/cap_mob.jpg";
 import tshirt from "../images/tshirt.jpg";
+import tshirtMob from "../images/tshirt_mob.jpg";
 import tshirt1 from "../images/tshirt1.jpg";
+import tshirt1Mob from "../images/tshirt1_mob.jpg";
 
 export const shopColectionsData = [
   {
-    url: cap,
+    img: cap,
+    mobImg: capMob,
     alt: "women cap",
     title: "collection",
     accentTitle: "women",
@@ -13,7 +17,8 @@ export const shopColectionsData = [
     linkText: "shop now",
   },
   {
-    url: tshirt,
+    img: tshirt,
+    mobImg: tshirtMob,
     alt: "women cap",
     title: "collection",
     accentTitle: "men",
@@ -22,7 +27,8 @@ export const shopColectionsData = [
     linkText: "shop now",
   },
   {
-    url: tshirt1,
+    img: tshirt1,
+    mobImg: tshirt1Mob,
     alt: "women cap",
     title: "collection",
     accentTitle: "kids",

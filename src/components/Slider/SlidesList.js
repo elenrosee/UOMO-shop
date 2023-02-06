@@ -4,6 +4,7 @@ import { Breakpoints, MQ } from "common";
 
 import styled from "styled-components";
 import { SliderTitle } from "./SliderTitle";
+import { useMediaQuery } from "react-responsive";
 
 const SlideList = styled.div`
   display: flex;
@@ -32,19 +33,25 @@ const SlideImg = styled.img`
 export const SlidesList = () => {
   const { slideNumber, items } = useContext(SliderContext);
 
+  const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
+  const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
+
   return (
     <SlideList style={{ transform: `translateX(-${slideNumber * 100}%)` }}>
-      {items.map(({ url, title, accentTitle, description, link }, index) => (
-        <SlideWraper key={index}>
-          <SlideImg src={url} alt={title} />
-          <SliderTitle
-            description={description}
-            title={title}
-            accentTitle={accentTitle}
-            link={link}
-          />
-        </SlideWraper>
-      ))}
+      {items.map(
+        ({ img, mobImg, title, accentTitle, description, link }, index) => (
+          <SlideWraper key={index}>
+            {isDesctop && <SlideImg src={img} alt={title} />}
+            {isMobile && <SlideImg src={mobImg} alt={title} />}
+            <SliderTitle
+              description={description}
+              title={title}
+              accentTitle={accentTitle}
+              link={link}
+            />
+          </SlideWraper>
+        )
+      )}
     </SlideList>
   );
 };
