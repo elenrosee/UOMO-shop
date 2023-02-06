@@ -5,6 +5,11 @@ import styled from "styled-components";
 export const TrendyProductsContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
+
+  ${MQ(Breakpoints.md)} {
+    margin-bottom: 100px;
+  }
 `;
 
 export const TitleWrapper = styled.div`
@@ -40,7 +45,6 @@ export const LinkWraper = styled.div`
   justify-content: center;
 
   margin-top: 42px;
-  margin-bottom: 100px;
 `;
 
 export const SeeAllProductsLink = styled(NavLink)`

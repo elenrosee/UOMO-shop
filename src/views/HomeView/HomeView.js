@@ -1,14 +1,15 @@
 import { Container } from "common";
-import { Slider } from "components";
+import { Slider, TimerComponent } from "components";
 import { ShopColections } from "components";
 import { TrendyProducts } from "components";
 
 export default function HomeView() {
   return (
     <Container>
-      <Slider />
+      <Slider autoPlay={true} />
       <ShopColections />
       <TrendyProducts />
+      <TimerComponent />
     </Container>
   );
 }
