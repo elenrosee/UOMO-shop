@@ -18,7 +18,7 @@ export const productsData = [
     mobImg: bagMob,
     alt: "women cap",
     category: "dresses",
-    name: "Cropped Faux Leather Jacket",
+    name: "Cropped Bag",
     description: "something about this Jacket",
     additionalInfo: "",
     link: "/colection",

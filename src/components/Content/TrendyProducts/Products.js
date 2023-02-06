@@ -1,4 +1,4 @@
-import { Breakpoints } from "common";
+import { Breakpoints, MQ } from "common";
 import { HeartSvg } from "icons";
 import { useMediaQuery } from "react-responsive";
 import { NavLink } from "react-router-dom";
@@ -8,21 +8,35 @@ export const ProductsList = styled.ul`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: -15px;
+  margin: -7px;
+
+  ${MQ(Breakpoints.md)} {
+    margin: -15px;
+  }
 `;
 
 export const ProductItem = styled.li`
-  margin: 15px;
-  width: 330px;
-  height: 495px;
+  margin: 7px;
+  width: 185px;
+  height: 292px;
+
+  ${MQ(Breakpoints.md)} {
+    margin: 15px;
+    width: 330px;
+    height: 495px;
+  }
 `;
 
 export const ProductImg = styled.img`
   display: block;
-  height: 400px;
+  height: 210px;
   width: 100%;
 
   object-fit: cover;
+
+  ${MQ(Breakpoints.md)} {
+    height: 400px;
+  }
 `;
 
 export const Wrapper = styled.div`
