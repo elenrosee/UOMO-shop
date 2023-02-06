@@ -55,48 +55,52 @@ export const ProductPrice = styled.p`
   }
 `;
 
-export const Products = ({ items }) => {
+export const Products = ({ items, displayQuantity }) => {
   const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
   const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
 
   return (
     <ProductsList>
       {items.map(
-        ({
-          img,
-          mobImg,
-          alt,
-          category,
-          name,
-          link,
-          price,
-          onSale,
-          discount,
-          id,
-        }) => (
-          <ProductItem key={id}>
-            {isMobile && <ProductImg src={mobImg} alt={alt} />}
-            {isDesctop && <ProductImg src={img} alt={alt} />}
-            <Wrapper>
-              <ProductCategory>{category}</ProductCategory>
-              <HeartSvg fill={"var(--secondary-text-color)"} />
-            </Wrapper>
-            <ProductName>{name}</ProductName>
-            {!onSale ? (
-              <ProductPrice>${price}</ProductPrice>
-            ) : (
-              <PriceWrapper>
-                <ProductPrice
-                  crossedOut={true}
-                  color={"var(--secondary-text-color)"}
-                >
-                  ${price}
-                </ProductPrice>
-                <ProductPrice color={"red"}>${price - discount}</ProductPrice>
-              </PriceWrapper>
-            )}
-          </ProductItem>
-        )
+        (
+          {
+            img,
+            mobImg,
+            alt,
+            category,
+            name,
+            link,
+            price,
+            onSale,
+            discount,
+            id,
+          },
+          index
+        ) =>
+          index < displayQuantity && (
+            <ProductItem key={id}>
+              {isMobile && <ProductImg src={mobImg} alt={alt} />}
+              {isDesctop && <ProductImg src={img} alt={alt} />}
+              <Wrapper>
+                <ProductCategory>{category}</ProductCategory>
+                <HeartSvg fill={"var(--secondary-text-color)"} />
+              </Wrapper>
+              <ProductName>{name}</ProductName>
+              {!onSale ? (
+                <ProductPrice>${price}</ProductPrice>
+              ) : (
+                <PriceWrapper>
+                  <ProductPrice
+                    crossedOut={true}
+                    color={"var(--secondary-text-color)"}
+                  >
+                    ${price}
+                  </ProductPrice>
+                  <ProductPrice color={"red"}>${price - discount}</ProductPrice>
+                </PriceWrapper>
+              )}
+            </ProductItem>
+          )
       )}
     </ProductsList>
   );

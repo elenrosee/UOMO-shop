@@ -11,6 +11,8 @@ import {
 } from "./TrendyProducts.styled";
 
 import { productsData } from "data/productsData";
+import { useMediaQuery } from "react-responsive";
+import { Breakpoints } from "common";
 const sectionsName = ["all", "newarrivals", "best seller", "top rating"];
 
 export const TrendyProducts = () => {
@@ -37,6 +39,9 @@ export const TrendyProducts = () => {
     setSelectedSection(e.currentTarget.name);
   };
 
+  const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
+  const displayQuantity = isMobile ? 4 : 8;
+
   return (
     <TrendyProductsContainer>
       <TitleWrapper>
@@ -48,7 +53,7 @@ export const TrendyProducts = () => {
         selectedSection={selectedSection}
         sectionsName={sectionsName}
       />
-      <Products items={items} />
+      <Products items={items} displayQuantity={displayQuantity} />
       <LinkWraper>
         <SeeAllProductsLink to="/colection">SEE ALL PRODUCT</SeeAllProductsLink>
       </LinkWraper>

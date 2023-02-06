@@ -1,15 +1,21 @@
+import bag from "../images/bag.jpg";
+import bagMob from "../images/bag_mob.jpg";
+import blondGirl from "../images/blond_girl.jpg";
+import blondGirlMob from "../images/blond_girl_mob.jpg";
 import cap from "../images/cap.jpg";
 import capMob from "../images/cap_mob.jpg";
 import tshirt from "../images/tshirt.jpg";
 import tshirtMob from "../images/tshirt_mob.jpg";
 import tshirt1 from "../images/tshirt1.jpg";
 import tshirt1Mob from "../images/tshirt1_mob.jpg";
+import tshirt2 from "../images/tshirt2.jpg";
+import tshirt2Mob from "../images/tshirt2_mob.jpg";
 
 export const productsData = [
   {
     id: 1,
-    img: cap,
-    mobImg: capMob,
+    img: bag,
+    mobImg: bagMob,
     alt: "women cap",
     category: "dresses",
     name: "Cropped Faux Leather Jacket",
@@ -29,8 +35,8 @@ export const productsData = [
   },
   {
     id: 2,
-    img: tshirt,
-    mobImg: tshirtMob,
+    img: blondGirl,
+    mobImg: blondGirlMob,
     alt: "women cap",
     category: "dresses",
     name: "Calvin Shorts",
@@ -50,8 +56,8 @@ export const productsData = [
   },
   {
     id: 3,
-    img: tshirt1,
-    mobImg: tshirt1Mob,
+    img: tshirt2,
+    mobImg: tshirt2Mob,
     alt: "women cap",
     category: "dresses",
     name: "Kirby T-Shirt",
@@ -71,8 +77,8 @@ export const productsData = [
   },
   {
     id: 4,
-    img: tshirt1,
-    mobImg: tshirt1Mob,
+    img: cap,
+    mobImg: capMob,
     alt: "women cap",
     category: "dresses",
     name: "Cableknit Shawl",
@@ -92,8 +98,8 @@ export const productsData = [
   },
   {
     id: 5,
-    img: tshirt1,
-    mobImg: tshirt1Mob,
+    img: tshirt,
+    mobImg: tshirtMob,
     alt: "women cap",
     category: "dresses",
     name: "Colorful Jacket",
