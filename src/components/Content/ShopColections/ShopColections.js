@@ -6,7 +6,6 @@ import { Breakpoints, MQ } from "common";
 import { useMediaQuery } from "react-responsive";
 
 export const ShopColectionsContainer = styled.div`
-  margin-top: 15px;
   margin-bottom: 15px;
 
   display: flex;

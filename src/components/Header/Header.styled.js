@@ -59,27 +59,4 @@ export const UserMenu = styled.ul`
 export const UserMenuBtn = styled.button`
   background: inherit;
   border: none;
-
-  &.shopping-bag {
-    position: relative;
-
-    &::before {
-      content: ${({ shoppingCounter }) =>
-        shoppingCounter ? `"${shoppingCounter}"` : `"0"`};
-
-      display: inline-block;
-      font-size: small;
-      color: white;
-      background-color: #b9a16b;
-
-      padding: 1px;
-      min-width: 16px;
-      height: 16px;
-      border-radius: 20px;
-
-      position: absolute;
-      left: 8px;
-      bottom: -3px;
-    }
-  }
 `;

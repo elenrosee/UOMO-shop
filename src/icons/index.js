@@ -1,3 +1,7 @@
+export { ShoulderSvg } from "./ShoulderSvg";
+
+export { HomeSvg } from "./HomeSvg";
+
 export { FacebookSvg } from "./FacebookSvg";
 export { InstagramSvg } from "./InstagramSvg";
 export { PinterestSvg } from "./PinterestSvg";

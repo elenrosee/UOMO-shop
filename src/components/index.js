@@ -1,5 +1,7 @@
 // export { ShopColections, Slider, Header } from '../components'
 
+export { MobileUserMenu } from "./MobileUserMenu";
+
 export { TimerComponent } from "./Content/TimerComponent";
 
 export { TrendyProducts } from "./Content";

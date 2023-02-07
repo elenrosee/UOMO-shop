@@ -28,8 +28,8 @@ export const Header = () => {
             <NavIconSvg />
           </UserMenuBtn>
           <LogoSvg />
-          <UserMenuBtn className="shopping-bag" shoppingCounter={3}>
-            <ShoppingBagSvg />
+          <UserMenuBtn>
+            <ShoppingBagSvg shoppingCounter={3} />
           </UserMenuBtn>
         </HeaderWraper>
       )}
@@ -61,8 +61,8 @@ export const Header = () => {
               </UserMenuBtn>
             </li>
             <li>
-              <UserMenuBtn className="shopping-bag" shoppingCounter={3}>
-                <ShoppingBagSvg />
+              <UserMenuBtn>
+                <ShoppingBagSvg shoppingCounter={3} />
               </UserMenuBtn>
             </li>
             <li>
