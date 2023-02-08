@@ -15,6 +15,10 @@ export const TimeWrapper = styled.div`
 export const TimeUnit = styled.div`
   margin-left: 15px;
   margin-right: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const TimeValue = styled.div``;

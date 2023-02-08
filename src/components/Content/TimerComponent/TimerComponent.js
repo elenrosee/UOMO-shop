@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
 
   ${MQ(Breakpoints.md)} {
     padding: 210px 0px 40px 200px;
+    margin-bottom: 100px;
   }
 `;
 

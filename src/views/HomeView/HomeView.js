@@ -1,5 +1,5 @@
 import { Breakpoints, Container } from "common";
-import { MobileUserMenu, Slider, TimerComponent } from "components";
+import { Banner, MobileUserMenu, Slider, TimerComponent } from "components";
 import { ShopColections } from "components";
 import { TrendyProducts } from "components";
 import { useMediaQuery } from "react-responsive";
@@ -9,11 +9,12 @@ export default function HomeView() {
 
   return (
     <Container>
-      <Slider autoPlay={true} autoPlayTime={10000} />
+      <Slider autoPlay={true} autoPlayTime={4000} />
       {isMobile && <MobileUserMenu />}
       <ShopColections />
       <TrendyProducts />
       <TimerComponent />
+      <Banner />
     </Container>
   );
 }
