@@ -1,3 +1,8 @@
 export default function ShopListView() {
-  return <h1>Shop List View</h1>;
+  return (
+    <div>
+      <h1>Shop List View</h1>
+      <p>some text</p>
+    </div>
+  );
 }

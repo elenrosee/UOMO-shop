@@ -92,7 +92,7 @@ export const TimerComponent = () => {
         <SlideLink to={""}>SHOP NOW</SlideLink>
       </TitleContainer>
 
-      <Timer />
+      <Timer targetDate={new Date("March 1, 2023")} />
     </Wrapper>
   );
 };

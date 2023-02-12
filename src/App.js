@@ -16,6 +16,10 @@ function App() {
           <Route path="/" exact element={<HomeView />} />
           <Route path="/home" exact element={<HomeView />} />
           <Route path="/shop" exact element={<ShopListView />} />
+          <Route path="/colection" exact element={<ShopListView />} />
+          <Route path="/journal" exact element={<ShopListView />} />
+          <Route path="/lookbook" exact element={<ShopListView />} />
+          <Route path="/pages" exact element={<ShopListView />} />
         </Routes>
       </Suspense>
     </div>

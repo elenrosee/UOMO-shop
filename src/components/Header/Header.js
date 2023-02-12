@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Breakpoints } from "common";
 import {
@@ -8,42 +9,41 @@ import {
   ShoppingBagSvg,
   UserSvg,
 } from "icons";
-import {
-  HeaderWraper,
-  PageNavLink,
-  PageNavLinkMenu,
-  UserMenu,
-  UserMenuBtn,
-} from "./Header.styled";
+import { HeaderWraper, UserMenu, UserMenuBtn } from "./Header.styled";
+import { PageNavBar } from "./PageNavBar";
 
 export const Header = () => {
+  const [isOpenMobileNavBar, setIsOpenMobileNavBar] = useState(false);
+
   const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
   const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
+
+  const openMobileNavBar = () => {
+    isOpenMobileNavBar
+      ? setIsOpenMobileNavBar(false)
+      : setIsOpenMobileNavBar(true);
+  };
 
   return (
     <>
       {isMobile && (
-        <HeaderWraper>
-          <UserMenuBtn>
-            <NavIconSvg />
-          </UserMenuBtn>
-          <LogoSvg />
-          <UserMenuBtn>
-            <ShoppingBagSvg shoppingCounter={3} />
-          </UserMenuBtn>
-        </HeaderWraper>
+        <>
+          <HeaderWraper>
+            <UserMenuBtn onClick={openMobileNavBar}>
+              <NavIconSvg />
+            </UserMenuBtn>
+            <LogoSvg />
+            <UserMenuBtn>
+              <ShoppingBagSvg shoppingCounter={3} />
+            </UserMenuBtn>
+          </HeaderWraper>
+          {isOpenMobileNavBar && <PageNavBar />}
+        </>
       )}
       {isDesctop && (
         <HeaderWraper>
-          <PageNavLinkMenu>
-            <LogoSvg />
-            <PageNavLink to="/home">HOME</PageNavLink>
-            <PageNavLink to="/shop">SHOP</PageNavLink>
-            <PageNavLink to="/colection">COLLECTION</PageNavLink>
-            <PageNavLink to="/journal">JOURNAL</PageNavLink>
-            <PageNavLink to="/lookbook">LOOKBOOK</PageNavLink>
-            <PageNavLink to="/pages">PAGES</PageNavLink>
-          </PageNavLinkMenu>
+          <LogoSvg />
+          <PageNavBar />
           <UserMenu>
             <li>
               <UserMenuBtn>
