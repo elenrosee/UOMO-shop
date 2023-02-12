@@ -18,7 +18,7 @@ export const Header = () => {
   const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
   const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
 
-  const openMobileNavBar = () => {
+  const openMobileNavBarToggle = () => {
     isOpenMobileNavBar
       ? setIsOpenMobileNavBar(false)
       : setIsOpenMobileNavBar(true);
@@ -29,7 +29,7 @@ export const Header = () => {
       {isMobile && (
         <>
           <HeaderWraper>
-            <UserMenuBtn onClick={openMobileNavBar}>
+            <UserMenuBtn onClick={openMobileNavBarToggle}>
               <NavIconSvg />
             </UserMenuBtn>
             <LogoSvg />
@@ -37,7 +37,9 @@ export const Header = () => {
               <ShoppingBagSvg shoppingCounter={3} />
             </UserMenuBtn>
           </HeaderWraper>
-          {isOpenMobileNavBar && <PageNavBar />}
+          {isOpenMobileNavBar && (
+            <PageNavBar openMobileNavBarToggle={openMobileNavBarToggle} />
+          )}
         </>
       )}
       {isDesctop && (
