@@ -3,7 +3,7 @@ import {
   InstagramSvg,
   PinterestSvg,
   TwitterSvg,
-} from "../../icons";
+} from "../../../icons";
 import {
   FollowUsContainer,
   FollowUsSocial,

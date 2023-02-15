@@ -1,12 +1,9 @@
-// export { ShopColections, Slider, Header } from '../components'
-
+export { LimitedEdition } from "./Content";
+export { Slider } from "./Content";
+export { TimerComponent } from "./Content";
 export { Banner } from "./Content";
-
-export { MobileUserMenu } from "./MobileUserMenu";
-
-export { TimerComponent } from "./Content/TimerComponent";
-
+export { MobileUserMenu } from "./Content";
 export { TrendyProducts } from "./Content";
 export { ShopColections } from "./Content";
+
 export { Header } from "./Header";
-export { Slider } from "./Slider";

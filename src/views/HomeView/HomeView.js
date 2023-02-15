@@ -1,5 +1,11 @@
 import { Breakpoints, Container } from "common";
-import { Banner, MobileUserMenu, Slider, TimerComponent } from "components";
+import {
+  Banner,
+  LimitedEdition,
+  MobileUserMenu,
+  Slider,
+  TimerComponent,
+} from "components";
 import { ShopColections } from "components";
 import { TrendyProducts } from "components";
 import { useMediaQuery } from "react-responsive";
@@ -15,6 +21,7 @@ export default function HomeView() {
       <TrendyProducts />
       <TimerComponent />
       <Banner />
+      <LimitedEdition />
     </Container>
   );
 }

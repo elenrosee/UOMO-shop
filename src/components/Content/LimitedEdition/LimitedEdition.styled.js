@@ -1,15 +1,17 @@
 import { Breakpoints, MQ } from "common";
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const TrendyProductsContainer = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1410px;
+export const LimitedEditionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+
   margin-bottom: 50px;
 
   ${MQ(Breakpoints.md)} {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 `;
 
@@ -41,33 +43,30 @@ export const AccentTitle = styled(Title)`
   font-weight: 700;
 `;
 
-export const LinkWraper = styled.div`
-  display: flex;
-  justify-content: center;
-
-  margin-top: 42px;
-`;
-
-export const SeeAllProductsLink = styled(NavLink)`
-  font-weight: 500;
+export const SliderContainer = styled.div`
+  overflow: hidden;
   position: relative;
 
-  ::after {
-    content: "";
-    display: inline-block;
-    background-color: black;
-    width: 100px;
-    height: 2px;
-    position: absolute;
-    left: 1px;
-    bottom: -2px;
+  width: 384px;
+
+  ${MQ(Breakpoints.md)} {
+    width: 1050px;
+  }
+
+  ${MQ(Breakpoints.lg)} {
+    width: 1410px;
   }
 `;
 
-export const ProductsList = styled.div`
+export const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+`;
+
+export const ProductsBlock = styled.div`
+  display: flex;
   margin: -7px;
 
   ${MQ(Breakpoints.md)} {

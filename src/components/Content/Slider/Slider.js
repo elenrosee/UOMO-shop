@@ -11,12 +11,7 @@ import { Breakpoints } from "common";
 
 export const SliderContext = createContext();
 
-export const Slider = function ({
-  width,
-  height,
-  autoPlay,
-  autoPlayTime = 3000,
-}) {
+export const Slider = ({ width, height, autoPlay, autoPlayTime = 3000 }) => {
   const [items, setItems] = useState([]);
   const [slide, setSlide] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null);

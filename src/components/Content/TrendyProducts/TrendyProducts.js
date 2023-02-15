@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Products } from "./Products";
 import { SectionsList } from "./SectionsList";
 import {
   AccentTitle,
   LinkWraper,
+  ProductsList,
   SeeAllProductsLink,
   Title,
   TitleWrapper,
@@ -13,6 +13,7 @@ import {
 import { productsData } from "data/productsData";
 import { useMediaQuery } from "react-responsive";
 import { Breakpoints } from "common";
+import { SingleProductItem } from "..";
 const sectionsName = ["all", "newarrivals", "best seller", "top rating"];
 
 export const TrendyProducts = () => {
@@ -40,6 +41,7 @@ export const TrendyProducts = () => {
   };
 
   const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
+
   const displayQuantity = isMobile ? 4 : 8;
 
   return (
@@ -53,7 +55,14 @@ export const TrendyProducts = () => {
         selectedSection={selectedSection}
         sectionsName={sectionsName}
       />
-      <Products items={items} displayQuantity={displayQuantity} />
+      <ProductsList>
+        {items.map(
+          (item, index) =>
+            index < displayQuantity && (
+              <SingleProductItem item={item} key={item.id} />
+            )
+        )}
+      </ProductsList>
       <LinkWraper>
         <SeeAllProductsLink to="/colection">SEE ALL PRODUCT</SeeAllProductsLink>
       </LinkWraper>

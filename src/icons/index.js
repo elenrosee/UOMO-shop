@@ -1,3 +1,6 @@
+export { BackSvg } from "./BackSvg";
+export { NextSvg } from "./NextSvg";
+
 export { ShoulderSvg } from "./ShoulderSvg";
 
 export { HomeSvg } from "./HomeSvg";
