@@ -5,6 +5,7 @@ import {
   MobileUserMenu,
   Slider,
   TimerComponent,
+  UomoInstagram,
 } from "components";
 import { ShopColections } from "components";
 import { TrendyProducts } from "components";
@@ -22,6 +23,7 @@ export default function HomeView() {
       <TimerComponent />
       <Banner />
       <LimitedEdition />
+      <UomoInstagram />
     </Container>
   );
 }

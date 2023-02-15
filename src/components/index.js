@@ -1,3 +1,5 @@
+export { UomoInstagram } from "./Content";
+
 export { LimitedEdition } from "./Content";
 export { Slider } from "./Content";
 export { TimerComponent } from "./Content";

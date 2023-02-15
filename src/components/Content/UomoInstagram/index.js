@@ -1,0 +1,1 @@
+export { UomoInstagram } from "./UomoInstagram";

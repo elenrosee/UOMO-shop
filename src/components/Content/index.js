@@ -1,3 +1,5 @@
+export { UomoInstagram } from "./UomoInstagram";
+
 export { SingleProductItem } from "./SinglProductItem";
 
 export { Slider } from "./Slider";
