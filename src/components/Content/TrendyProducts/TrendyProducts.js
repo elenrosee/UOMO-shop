@@ -12,8 +12,8 @@ import {
 
 import { productsData } from "data/productsData";
 import { useMediaQuery } from "react-responsive";
-import { Breakpoints } from "common";
-import { SingleProductItem } from "..";
+import { Breakpoints, SingleProductItem } from "common";
+
 const sectionsName = ["all", "newarrivals", "best seller", "top rating"];
 
 export const TrendyProducts = () => {

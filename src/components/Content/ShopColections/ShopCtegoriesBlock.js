@@ -1,32 +1,6 @@
-import { Breakpoints, MQ, SecondaryTitle } from "common";
+import { Breakpoints, SecondaryTitle } from "common";
 import { useMediaQuery } from "react-responsive";
-import styled from "styled-components";
-
-export const BlockContainer = styled.div`
-  width: ${({ width }) => width};
-  height: ${({ heigth }) => heigth};
-  background-color: ${({ color }) => color};
-
-  display: flex;
-  justify-content: end;
-  align-items: flex-end;
-
-  position: relative;
-
-  margin-bottom: 15px;
-
-  ${MQ(Breakpoints.md)} {
-    margin: 15px;
-  }
-`;
-
-export const ColectionImage = styled.img`
-  display: block;
-  height: 100%;
-  width: ${({ width }) => width};
-
-  object-fit: cover;
-`;
+import { BlockContainer, ColectionImage } from "./ShopCtegoriesBlock.styled";
 
 export const ShopCtegoriesBlock = ({ data, settings }) => {
   const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });

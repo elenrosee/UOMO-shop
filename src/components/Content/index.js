@@ -1,7 +1,5 @@
+export { Support } from "./Support";
 export { UomoInstagram } from "./UomoInstagram";
-
-export { SingleProductItem } from "./SinglProductItem";
-
 export { Slider } from "./Slider";
 export { TimerComponent } from "./TimerComponent";
 export { MobileUserMenu } from "./MobileUserMenu";

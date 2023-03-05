@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router";
 import { Header } from "components/Header";
 import { GlobalStyle } from "./GlobalStyle";
+import { Footer } from "components/Footer";
 
 const HomeView = lazy(() => import("./views/HomeView"));
 const ShopListView = lazy(() => import("./views/ShopListView"));
@@ -21,6 +22,7 @@ function App() {
           <Route path="/lookbook" exact element={<ShopListView />} />
           <Route path="/pages" exact element={<ShopListView />} />
         </Routes>
+        <Footer />
       </Suspense>
     </div>
   );
