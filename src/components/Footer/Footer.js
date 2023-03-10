@@ -1,20 +1,7 @@
-import { Container } from "common";
-import styled from "styled-components";
 import { CompanyInfo } from "./CompanyInfo";
+import { FooterContainer, Wrapper } from "./Footer.styled";
 import { SiteLinks } from "./SiteLinks";
-
-export const FooterContainer = styled.div`
-  background-color: var(--background-footer-color);
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-`;
-
-export const Wrapper = styled(Container)`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-`;
+import { SubscribeBlock } from "./SubscribeBlock";
 
 export const Footer = () => {
   return (
@@ -22,6 +9,7 @@ export const Footer = () => {
       <Wrapper>
         <CompanyInfo />
         <SiteLinks />
+        <SubscribeBlock />
       </Wrapper>
     </FooterContainer>
   );
