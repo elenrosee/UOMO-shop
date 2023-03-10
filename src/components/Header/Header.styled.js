@@ -6,6 +6,9 @@ export const HeaderWraper = styled(Container)`
   justify-content: space-between;
   align-items: center;
 
+  background-color: white;
+
+  position: relative;
   padding: 15px;
 
   ${MQ(Breakpoints.md)} {

@@ -3,7 +3,7 @@ import { LogoSvg } from "icons";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  min-width: 280px;
+  width: 240px;
   margin-bottom: 50px;
   margin-right: 15px;
 

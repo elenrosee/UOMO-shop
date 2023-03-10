@@ -2,9 +2,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 130px;
+  width: 160px;
   padding-bottom: 20px;
-  margin-right: 15px;
 `;
 
 export const Title = styled.h4`

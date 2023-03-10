@@ -8,7 +8,14 @@ export const NavBarWrapper = styled.div`
   flex-direction: column;
   padding: 10px 0 20px;
 
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  background-color: white;
+
   ${MQ(Breakpoints.md)} {
+    width: auto;
+    position: relative;
     padding: 0px;
     flex-direction: row;
   }

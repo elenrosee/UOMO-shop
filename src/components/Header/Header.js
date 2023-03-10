@@ -16,7 +16,7 @@ export const Header = () => {
   const [isOpenMobileNavBar, setIsOpenMobileNavBar] = useState(false);
 
   const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
-  const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
+  const isTablet = useMediaQuery({ minWidth: Breakpoints.md });
 
   const openMobileNavBarToggle = () => {
     isOpenMobileNavBar
@@ -42,7 +42,7 @@ export const Header = () => {
           )}
         </>
       )}
-      {isDesctop && (
+      {isTablet && (
         <HeaderWraper>
           <LogoSvg />
           <PageNavBar />
