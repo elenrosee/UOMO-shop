@@ -26,7 +26,7 @@ export const SingleProductItem = ({ item }) => {
         <ProductCategory>{category}</ProductCategory>
         <HeartSvg fill={"var(--secondary-text-color)"} />
       </Wrapper>
-      <ProductName>{name}</ProductName>
+      <ProductName to="/single_product">{name}</ProductName>
       {!onSale ? (
         <ProductPrice>${price}</ProductPrice>
       ) : (

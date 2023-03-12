@@ -1,11 +1,12 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router";
-import { Header } from "components/Header";
+
 import { GlobalStyle } from "./GlobalStyle";
-import { Footer } from "components/Footer";
+
+import { Footer, Header } from "components";
 
 const HomeView = lazy(() => import("./views/HomeView"));
-const ShopListView = lazy(() => import("./views/ShopListView"));
+const ShopView = lazy(() => import("./views/ShopView"));
 
 function App() {
   return (
@@ -16,11 +17,11 @@ function App() {
         <Routes>
           <Route path="/" exact element={<HomeView />} />
           <Route path="/home" exact element={<HomeView />} />
-          <Route path="/shop" exact element={<ShopListView />} />
-          <Route path="/colection" exact element={<ShopListView />} />
-          <Route path="/journal" exact element={<ShopListView />} />
-          <Route path="/lookbook" exact element={<ShopListView />} />
-          <Route path="/pages" exact element={<ShopListView />} />
+          <Route path="/shop" exact element={<ShopView />} />
+          <Route path="/colection" exact element={<ShopView />} />
+          <Route path="/journal" exact element={<ShopView />} />
+          <Route path="/lookbook" exact element={<ShopView />} />
+          <Route path="/pages" exact element={<ShopView />} />
         </Routes>
         <Footer />
       </Suspense>

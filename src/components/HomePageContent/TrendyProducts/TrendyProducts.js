@@ -64,7 +64,7 @@ export const TrendyProducts = () => {
         )}
       </ProductsList>
       <LinkWraper>
-        <SeeAllProductsLink to="/colection">SEE ALL PRODUCT</SeeAllProductsLink>
+        <SeeAllProductsLink to="/shop">SEE ALL PRODUCT</SeeAllProductsLink>
       </LinkWraper>
     </TrendyProductsContainer>
   );

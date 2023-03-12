@@ -1,3 +1,5 @@
+import { useMediaQuery } from "react-responsive";
+
 import { Breakpoints } from "common";
 import {
   Banner,
@@ -6,11 +8,10 @@ import {
   Slider,
   TimerComponent,
   UomoInstagram,
+  ShopColections,
+  Support,
+  TrendyProducts,
 } from "components";
-import { ShopColections } from "components";
-import { TrendyProducts } from "components";
-import { Support } from "components/Content";
-import { useMediaQuery } from "react-responsive";
 
 export default function HomeView() {
   const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });

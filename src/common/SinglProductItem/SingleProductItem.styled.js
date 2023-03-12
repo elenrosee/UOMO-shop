@@ -41,6 +41,7 @@ export const ProductCategory = styled.p`
 export const ProductName = styled(NavLink)`
   font-size: 16px;
 `;
+
 export const PriceWrapper = styled.div`
   display: flex;
 `;
