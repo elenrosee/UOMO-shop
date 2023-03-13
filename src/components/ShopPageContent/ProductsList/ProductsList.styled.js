@@ -1,7 +1,7 @@
 import { Container } from "common";
 import styled from "styled-components";
 
-export const ProductsListContainer = styled(Container)``;
+export const ProductsListContainer = styled.div``;
 
 export const List = styled.div`
   display: flex;

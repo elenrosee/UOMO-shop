@@ -16,6 +16,7 @@ import {
   OrderBtn,
   AddToWishListBtn,
 } from "./SingleProductPageContent.styled";
+import { RelatedProducts } from "./RelatedProducts";
 
 export const SingleProductPageContent = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState("");
@@ -36,10 +37,11 @@ export const SingleProductPageContent = ({ product }) => {
   };
 
   const {
+    id,
     img,
-    // mobImg,
+    mobImg,
     alt,
-    //  category,
+    category,
     name,
     description,
     sizes,
@@ -51,43 +53,46 @@ export const SingleProductPageContent = ({ product }) => {
   } = product;
 
   return (
-    <Wrapper>
-      <ProductImages img={img} alt={alt} />
-      <ProductInfo>
-        <ProductName>{name}</ProductName>
-        {!onSale ? (
-          <Price>${price}</Price>
-        ) : (
-          <PriceWrapper>
-            <Price crossedOut={true} color={"var(--secondary-text-color)"}>
-              ${price}
-            </Price>
-            <Price color="red">${price - discount}</Price>
-          </PriceWrapper>
-        )}
-        <ProductDesc>{description}</ProductDesc>
-        <ProductSizeList
-          sizes={sizes}
-          selectedSize={selectedSize}
-          setSelectedSize={setSelectedSize}
-        />
-        <ProductColorsList
-          color={color}
-          selectedColor={selectedColor}
-          setSelectedColor={setSelectedColor}
-        />
-        <OrderWrapper>
-          <Input
-            selectedQuantity={selectedQuantity}
-            changeQuantity={changeQuantity}
+    <>
+      <Wrapper>
+        <ProductImages img={img} mobImg={mobImg} alt={alt} />
+        <ProductInfo>
+          <ProductName>{name}</ProductName>
+          {!onSale ? (
+            <Price>${price}</Price>
+          ) : (
+            <PriceWrapper>
+              <Price crossedOut={true} color={"var(--secondary-text-color)"}>
+                ${price}
+              </Price>
+              <Price color="red">${price - discount}</Price>
+            </PriceWrapper>
+          )}
+          <ProductDesc>{description}</ProductDesc>
+          <ProductSizeList
+            sizes={sizes}
+            selectedSize={selectedSize}
+            setSelectedSize={setSelectedSize}
           />
-          <OrderBtn>ADD TO CART</OrderBtn>
-        </OrderWrapper>
-        <AddToWishListBtn>
-          <HeartSvg width="16" height="16" />
-          <span>ADD TO WISHLIST</span>
-        </AddToWishListBtn>
-      </ProductInfo>
-    </Wrapper>
+          <ProductColorsList
+            color={color}
+            selectedColor={selectedColor}
+            setSelectedColor={setSelectedColor}
+          />
+          <OrderWrapper>
+            <Input
+              selectedQuantity={selectedQuantity}
+              changeQuantity={changeQuantity}
+            />
+            <OrderBtn>ADD TO CART</OrderBtn>
+          </OrderWrapper>
+          <AddToWishListBtn>
+            <HeartSvg width="16" height="16" />
+            <span>ADD TO WISHLIST</span>
+          </AddToWishListBtn>
+        </ProductInfo>
+      </Wrapper>
+      <RelatedProducts category={category} id={id} />
+    </>
   );
 };

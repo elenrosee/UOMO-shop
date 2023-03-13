@@ -118,8 +118,9 @@ export const LimitedEdition = ({
   return (
     <LimitedEditionContainer>
       <TitleWrapper>
-        <Title>limited&nbsp;</Title> <AccentTitle>edition</AccentTitle>
-      </TitleWrapper>{" "}
+        <Title>limited&nbsp;</Title>
+        <AccentTitle>edition</AccentTitle>
+      </TitleWrapper>
       <Arrows changeSlide={changeSlide} />
       <SliderContainer
         onTouchStart={handleTouchStart}
