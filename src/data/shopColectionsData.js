@@ -13,7 +13,7 @@ export const shopColectionsData = [
     title: "collection",
     accentTitle: "women",
     description: "hot list",
-    link: "/colection",
+    link: "/shop/women",
     linkText: "shop now",
   },
   {
@@ -23,7 +23,7 @@ export const shopColectionsData = [
     title: "collection",
     accentTitle: "men",
     description: "hot list",
-    link: "/colection",
+    link: "/shop/men",
     linkText: "shop now",
   },
   {
@@ -33,7 +33,7 @@ export const shopColectionsData = [
     title: "collection",
     accentTitle: "kids",
     description: "hot list",
-    link: "/colection",
+    link: "/shop/kids",
     linkText: "shop now",
   },
   {

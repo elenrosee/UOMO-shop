@@ -13,7 +13,7 @@ import {
   TrendyProducts,
 } from "components";
 
-export default function HomeView() {
+export default function ShopView() {
   const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
 
   return (

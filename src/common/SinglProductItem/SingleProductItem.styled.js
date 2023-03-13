@@ -1,5 +1,5 @@
 import { Breakpoints, MQ } from "common/Breakpoints";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ProductItem = styled.div`
@@ -38,13 +38,29 @@ export const ProductCategory = styled.p`
   color: var(--secondary-text-color);
 `;
 
-export const ProductName = styled(NavLink)`
+export const ProductNameLink = styled(Link)`
   display: block;
 
   font-size: 16px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+
+  &:focus,
+  :hover {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      background-color: black;
+      width: 60%;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+    }
+  }
 `;
 
 export const PriceWrapper = styled.div`

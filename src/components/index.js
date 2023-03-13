@@ -12,3 +12,5 @@ export { TrendyProducts } from "./HomePageContent";
 export { ShopColections } from "./HomePageContent";
 
 export { ShopPageContent } from "./ShopPageContent";
+
+export { SingleProductPageContent } from "./SingleProductPageContent";

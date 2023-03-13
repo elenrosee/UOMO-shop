@@ -4,7 +4,6 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle` 
  :root {
   --text-color: #222;
-  
   --secondary-text-color: #767676;
   --background-footer-color: #CFCDCD;
 

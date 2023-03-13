@@ -1,5 +1,5 @@
 import { Breakpoints, MQ } from "common";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Timer } from "./Timer";
 
@@ -66,7 +66,7 @@ export const AccentTitle = styled(Title)`
   font-weight: 700;
 `;
 
-const SlideLink = styled(NavLink)`
+const SlideLink = styled(Link)`
   font-weight: 500;
   position: relative;
 
@@ -89,7 +89,7 @@ export const TimerComponent = () => {
         <Description>DEAL OF THE WEEK</Description>
         <AccentTitle>Spring</AccentTitle>
         <Title>Collection</Title>
-        <SlideLink to={""}>SHOP NOW</SlideLink>
+        <SlideLink to={"/shop/new-in"}>SHOP NOW</SlideLink>
       </TitleContainer>
 
       <Timer targetDate={new Date("May 1, 2023")} />

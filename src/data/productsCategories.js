@@ -6,11 +6,7 @@ export const productsCategories = [
     linkTo: "new-in",
     img: shotMen,
   },
-  {
-    name: "jackets",
-    linkTo: "jackets",
-    img: shotMen,
-  },
+
   {
     name: "men",
     linkTo: "men",
@@ -22,8 +18,18 @@ export const productsCategories = [
     img: shotMen,
   },
   {
+    name: "kids",
+    linkTo: "kids",
+    img: shotMen,
+  },
+  {
     name: "accessories",
     linkTo: "accessories",
+    img: shotMen,
+  },
+  {
+    name: "shoes",
+    linkTo: "shoes",
     img: shotMen,
   },
   {

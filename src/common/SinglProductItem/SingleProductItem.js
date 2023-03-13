@@ -6,7 +6,7 @@ import {
   ProductCategory,
   ProductImg,
   ProductItem,
-  ProductName,
+  ProductNameLink,
   ProductPrice,
   Wrapper,
 } from "./SingleProductItem.styled";
@@ -20,13 +20,13 @@ export const SingleProductItem = ({ item }) => {
 
   return (
     <ProductItem key={id}>
-      {isMobile && <ProductImg src={mobImg} alt={alt} />}
-      {isDesctop && <ProductImg src={img} alt={alt} />}
+      {isMobile && <ProductImg src={mobImg[0]} alt={alt} />}
+      {isDesctop && <ProductImg src={img[0]} alt={alt} />}
       <Wrapper>
         <ProductCategory>{category}</ProductCategory>
         <HeartSvg fill={"var(--secondary-text-color)"} />
       </Wrapper>
-      <ProductName to="/single_product">{name}</ProductName>
+      <ProductNameLink to={`/single_product/${id}`}>{name}</ProductNameLink>
       {!onSale ? (
         <ProductPrice>${price}</ProductPrice>
       ) : (

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Breakpoints, MQ } from "common/Breakpoints";
 
 const TitleContainer = styled.div`
@@ -49,7 +49,7 @@ const Text = styled.p`
   text-transform: none;
 `;
 
-const SlideLink = styled(NavLink)`
+const SlideLink = styled(Link)`
   font-weight: 500;
   position: relative;
 
