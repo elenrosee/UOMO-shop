@@ -25,6 +25,8 @@ export const LinkTo = styled(Link)`
   font-weight: 400;
   line-height: 40px;
 
+  text-transform: capitalize;
+
   :not(:last-child) {
     margin-bottom: 10px;
   }
@@ -52,7 +54,7 @@ export const LinksList = ({ title, links }) => {
       <Title>{title}</Title>
       <List>
         {links.map((link, index) => (
-          <LinkTo to={link.linkTo} key={index}>
+          <LinkTo to={`shop/${link.linkTo}`} key={index}>
             {link.name}
           </LinkTo>
         ))}

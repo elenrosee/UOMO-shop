@@ -2,18 +2,14 @@ import { Breakpoints } from "common";
 import { useMediaQuery } from "react-responsive";
 import {
   CategoriesList,
-  CategoryName,
+  CategoryNameLink,
   HeroContainer,
   HeroImg,
   HeroTextContent,
   SelectedCategory,
 } from "./HeroSection.styled";
 
-export const HeroSection = ({
-  selectedCategory,
-  productsCategories,
-  setSelectedProductsCategory,
-}) => {
+export const HeroSection = ({ selectedCategory, productsCategories }) => {
   const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
 
   const { name, img } = selectedCategory;
@@ -26,13 +22,13 @@ export const HeroSection = ({
         <CategoriesList>
           {productsCategories.map((item, index) => {
             return (
-              <CategoryName
+              <CategoryNameLink
                 key={index}
-                onClick={() => setSelectedProductsCategory(item)}
+                to={`/shop/${item.linkTo}`}
                 className={item.name === selectedCategory.name && "active"}
               >
                 {item.name}
-              </CategoryName>
+              </CategoryNameLink>
             );
           })}
         </CategoriesList>

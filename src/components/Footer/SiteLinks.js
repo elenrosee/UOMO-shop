@@ -1,3 +1,4 @@
+import { productsCategories } from "data/productsCategories";
 import { LinksList } from "./LinksList";
 
 export const SiteLinks = () => {
@@ -9,13 +10,7 @@ export const SiteLinks = () => {
     { name: "Contact Us", linkTo: "/contact-us" },
   ];
 
-  const shopLinks = [
-    { name: "New Arrivals", linkTo: "/new-arrivals" },
-    { name: "Accessories", linkTo: "/accessories" },
-    { name: "Men", linkTo: "/men" },
-    { name: "Women", linkTo: "/women" },
-    { name: "Shop All", linkTo: "/shop-all" },
-  ];
+  const shopLinks = productsCategories;
 
   const helpLinks = [
     { name: "Customer Service", linkTo: "/customer-service" },

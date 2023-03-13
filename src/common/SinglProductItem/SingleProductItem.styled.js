@@ -39,7 +39,12 @@ export const ProductCategory = styled.p`
 `;
 
 export const ProductName = styled(NavLink)`
+  display: block;
+
   font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 export const PriceWrapper = styled.div`

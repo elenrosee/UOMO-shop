@@ -1,15 +1,13 @@
 import { ShopPageContent } from "components";
-// import { useParams } from 'react-router-dom'
+import { useParams } from "react-router-dom";
 
 export default function ShopView() {
-  // const params = useParams()
-  // const productCategory = params.categoryName
-
-  // console.log(productCategory)
+  const params = useParams();
+  const productCategory = params.category;
 
   return (
     <>
-      <ShopPageContent />
+      <ShopPageContent productCategory={productCategory} />
     </>
   );
 }

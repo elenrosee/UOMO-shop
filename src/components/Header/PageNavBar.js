@@ -10,7 +10,7 @@ export const PageNavBar = ({ openMobileNavBarToggle = false }) => {
         HOME
       </PageNavLink>
       <PageNavLink
-        to="/shop"
+        to="/shop/new-in"
         onClick={() => openMobileNavBarToggle && openMobileNavBarToggle()}
       >
         SHOP

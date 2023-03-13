@@ -4,9 +4,7 @@ import { ProductsList } from "./ProductsList";
 import { productsData } from "data/productsData";
 import { productsCategories } from "data/productsCategories";
 
-export const ShopPageContent = ({
-  productCategory = productsCategories[0].name,
-}) => {
+export const ShopPageContent = ({ productCategory }) => {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedProductsCategory] = useState({});
   const [productsBySelectedCategory, setProductsBySelectedCategory] = useState(
@@ -14,40 +12,41 @@ export const ShopPageContent = ({
   );
 
   useEffect(() => {
-    const setSelectedCategory = () => {
-      const category = productsCategories.find(
-        (i) => i.name === productCategory
-      );
-
-      setSelectedProductsCategory(category);
-    };
     const loadProducts = () => {
       setProducts(productsData);
     };
 
     loadProducts();
-    setSelectedCategory();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    const setProductsByCategory = () => {
-      const filtredProducts = products.filter(
-        (pr) => pr.category === selectedCategory.name
+    const setSelectedCategory = () => {
+      const category = productsCategories.find(
+        (i) => i.linkTo === productCategory
       );
+
+      setSelectedProductsCategory(category);
+    };
+
+    const setProductsByCategory = () => {
+      const filtredProducts =
+        selectedCategory.name === "shop all"
+          ? products
+          : products.filter((pr) => pr.category === selectedCategory.name);
 
       setProductsBySelectedCategory(filtredProducts);
     };
 
+    setSelectedCategory();
     setProductsByCategory();
-  }, [products, selectedCategory]);
+  }, [productCategory, products, selectedCategory]);
 
   return (
     <>
       <HeroSection
         selectedCategory={selectedCategory}
         productsCategories={productsCategories}
-        setSelectedProductsCategory={setSelectedProductsCategory}
       />
       <ProductsList products={productsBySelectedCategory} />
     </>

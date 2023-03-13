@@ -1,4 +1,5 @@
 import { Breakpoints, Container, MQ } from "common";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeroContainer = styled.div`
@@ -55,7 +56,7 @@ export const CategoriesList = styled.div`
   justify-content: center;
 `;
 
-export const CategoryName = styled.button`
+export const CategoryNameLink = styled(Link)`
   background-color: transparent;
   border: none;
   font-weight: 500;
