@@ -1,3 +1,4 @@
+import { Breakpoints, MQ } from "common";
 import { ProductPrice } from "common/SinglProductItem/SingleProductItem.styled";
 import styled from "styled-components";
 
@@ -5,22 +6,36 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  padding-top: 30px;
-  padding-bottom: 50px;
+  ${MQ(Breakpoints.md)} {
+    padding-top: 10px;
+    padding-bottom: 50px;
+  }
 `;
 
 export const ProductInfo = styled.div`
   max-width: 500px;
   min-width: 320px;
-  margin-left: 50px;
+
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  ${MQ(Breakpoints.md)} {
+    padding-top: 0;
+    padding-left: 50px;
+  }
 `;
 
 export const ProductName = styled.h1`
   font-weight: 400;
-  font-size: 26px;
-  line-height: 35px;
+  font-size: 20px;
+  line-height: 27px;
 
   margin-bottom: 10px;
+
+  ${MQ(Breakpoints.md)} {
+    font-size: 26px;
+    line-height: 35px;
+  }
 `;
 
 export const Price = styled(ProductPrice)`

@@ -13,7 +13,8 @@ export const QuantityInput = styled.div`
 export const InputBtn = styled.button`
   background-color: transparent;
   border: none;
-  padding: 20px 20px;
+  font-size: 20px;
+  padding: 18px 18px;
 `;
 
 export const Quantity = styled.span``;

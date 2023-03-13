@@ -1,7 +1,7 @@
+import { useState } from "react";
+
 import { PriceWrapper } from "common/SinglProductItem/SingleProductItem.styled";
 import { HeartSvg } from "icons";
-import { useState } from "react";
-import styled from "styled-components";
 import { Input } from "./Input";
 import { ProductColorsList } from "./ProductColorsList";
 import { ProductImages } from "./ProductImages";
