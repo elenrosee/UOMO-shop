@@ -1,3 +1,4 @@
+export { ProductsList } from "./ProductsList";
 export { SingleProductItem } from "./SinglProductItem";
 export { SocialLinks } from "./SocialLinks";
 

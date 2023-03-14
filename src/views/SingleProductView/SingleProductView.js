@@ -1,4 +1,4 @@
-import { Container, MQ } from "common";
+import { Container } from "common";
 import { SingleProductPageContent } from "components";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
