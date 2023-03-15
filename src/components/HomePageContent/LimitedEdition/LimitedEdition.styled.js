@@ -5,7 +5,6 @@ export const LimitedEditionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   position: relative;
 
   margin-bottom: 50px;
@@ -45,7 +44,6 @@ export const AccentTitle = styled(Title)`
 
 export const SliderContainer = styled.div`
   overflow: hidden;
-  position: relative;
 
   width: 384px;
 

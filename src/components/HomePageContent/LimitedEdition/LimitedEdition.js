@@ -1,8 +1,8 @@
-import { Breakpoints, SingleProductItem } from "common";
+import { Breakpoints, MQ, SingleProductItem } from "common";
 import { productsData } from "data/productsData";
 import { useCallback, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Arrows } from "./Arrows";
+// import { Arrows } from './Arrows'
 import {
   AccentTitle,
   LimitedEditionContainer,
@@ -12,6 +12,64 @@ import {
   TitleWrapper,
   Wrapper,
 } from "./LimitedEdition.styled";
+
+import { NextSvg, BackSvg } from "icons";
+import styled from "styled-components";
+
+export const Arrow = styled.button`
+  width: 35px;
+  height: 35px;
+  border: 1px solid #e4e4e4;
+  border-radius: 20px;
+  background-color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & svg {
+    height: 15px;
+  }
+
+  ${MQ(Breakpoints.lg)} {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+
+    & svg {
+      height: 25px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.backBtn {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+
+    z-index: 1;
+
+    ${MQ(Breakpoints.md)} {
+      left: 10%;
+    }
+  }
+
+  &.nextBtn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+
+    z-index: 1;
+
+    ${MQ(Breakpoints.md)} {
+      right: 10%;
+    }
+  }
+`;
 
 export const LimitedEdition = ({
   width,
@@ -27,8 +85,6 @@ export const LimitedEdition = ({
   const isDesctop = useMediaQuery({ minWidth: Breakpoints.lg });
 
   useEffect(() => {
-    // const arrayViewLength =  isDesctop ? 4 : 2
-
     let arrayViewLength;
 
     if (isDesctop) {
@@ -74,10 +130,6 @@ export const LimitedEdition = ({
     [items.length, slide]
   );
 
-  //   const goToSlide = (number) => {
-  //     setSlide(number % items.length)
-  //   }
-
   const handleTouchStart = (e) => {
     const touchDown = e.touches[0].clientX;
 
@@ -121,7 +173,10 @@ export const LimitedEdition = ({
         <Title>limited&nbsp;</Title>
         <AccentTitle>edition</AccentTitle>
       </TitleWrapper>
-      <Arrows changeSlide={changeSlide} />
+      {/* <Arrows changeSlide={changeSlide} /> */}
+      <Arrow className="backBtn" onClick={() => changeSlide(-1)}>
+        <BackSvg />
+      </Arrow>
       <SliderContainer
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
@@ -135,7 +190,10 @@ export const LimitedEdition = ({
             </ProductsBlock>
           ))}
         </Wrapper>
-      </SliderContainer>
+      </SliderContainer>{" "}
+      <Arrow className="nextBtn" onClick={() => changeSlide(1)}>
+        <NextSvg />
+      </Arrow>
     </LimitedEditionContainer>
   );
 };

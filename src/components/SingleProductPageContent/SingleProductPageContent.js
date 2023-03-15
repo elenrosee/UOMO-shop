@@ -35,12 +35,12 @@ export const SingleProductPageContent = ({ product }) => {
 
   const isInWishlist = wishlist.includes(product.id);
 
-  const addProductToWishList = (id) => {
-    dispatch(addToWishList(id));
+  const addProductToWishList = () => {
+    dispatch(addToWishList(product.id));
   };
 
-  const removeProductFromWishList = (id) => {
-    dispatch(removeFromWishList(id));
+  const removeProductFromWishList = () => {
+    dispatch(removeFromWishList(product.id));
   };
 
   const addToCart = () => {
@@ -128,8 +128,8 @@ export const SingleProductPageContent = ({ product }) => {
           <AddToWishListBtn
             onClick={() =>
               isInWishlist
-                ? removeProductFromWishList(id)
-                : addProductToWishList(id)
+                ? removeProductFromWishList()
+                : addProductToWishList()
             }
           >
             <HeartSvg
