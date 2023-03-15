@@ -9,7 +9,7 @@ export const LimitedEditionContainer = styled.div`
 
   margin-bottom: 50px;
 
-  ${MQ(Breakpoints.md)} {
+  ${MQ(Breakpoints.lg)} {
     margin-bottom: 80px;
   }
 `;
@@ -21,7 +21,7 @@ export const TitleWrapper = styled.div`
 
   margin-bottom: 15px;
 
-  ${MQ(Breakpoints.md)} {
+  ${MQ(Breakpoints.lg)} {
     margin-bottom: 30px;
   }
 `;
@@ -32,7 +32,7 @@ export const Title = styled.h3`
   font-size: 26px;
   line-height: 37px;
 
-  ${MQ(Breakpoints.md)} {
+  ${MQ(Breakpoints.lg)} {
     font-size: 35px;
     line-height: 47px;
   }
@@ -44,11 +44,10 @@ export const AccentTitle = styled(Title)`
 
 export const SliderContainer = styled.div`
   overflow: hidden;
-
-  width: 384px;
+  width: 320px;
 
   ${MQ(Breakpoints.md)} {
-    width: 1050px;
+    width: 675px;
   }
 
   ${MQ(Breakpoints.lg)} {
@@ -65,9 +64,68 @@ export const Wrapper = styled.div`
 
 export const ProductsBlock = styled.div`
   display: flex;
-  margin: -7px;
+  width: 100%;
+`;
 
-  ${MQ(Breakpoints.md)} {
-    margin: -15px;
+export const Arrow = styled.button`
+  width: 35px;
+  height: 35px;
+  border: 1px solid #e4e4e4;
+  border-radius: 20px;
+  background-color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & svg {
+    height: 15px;
+  }
+
+  ${MQ(Breakpoints.lg)} {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+
+    & svg {
+      height: 25px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.backBtn {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+
+    z-index: 1;
+
+    ${MQ(Breakpoints.md)} {
+      left: 10%;
+    }
+
+    ${MQ(Breakpoints.lg)} {
+      left: 5px;
+    }
+  }
+
+  &.nextBtn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+
+    z-index: 1;
+
+    ${MQ(Breakpoints.md)} {
+      right: 10%;
+    }
+
+    ${MQ(Breakpoints.md)} {
+      right: 5px;
+    }
   }
 `;

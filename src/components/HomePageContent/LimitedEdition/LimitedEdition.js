@@ -1,10 +1,11 @@
-import { Breakpoints, MQ, SingleProductItem } from "common";
+import { Breakpoints, SingleProductItem } from "common";
 import { productsData } from "data/productsData";
 import { useCallback, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 // import { Arrows } from './Arrows'
 import {
   AccentTitle,
+  Arrow,
   LimitedEditionContainer,
   ProductsBlock,
   SliderContainer,
@@ -14,62 +15,6 @@ import {
 } from "./LimitedEdition.styled";
 
 import { NextSvg, BackSvg } from "icons";
-import styled from "styled-components";
-
-export const Arrow = styled.button`
-  width: 35px;
-  height: 35px;
-  border: 1px solid #e4e4e4;
-  border-radius: 20px;
-  background-color: #ffffff;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & svg {
-    height: 15px;
-  }
-
-  ${MQ(Breakpoints.lg)} {
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: transparent;
-
-    & svg {
-      height: 25px;
-    }
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &.backBtn {
-    position: absolute;
-    left: 5px;
-    top: 50%;
-
-    z-index: 1;
-
-    ${MQ(Breakpoints.md)} {
-      left: 10%;
-    }
-  }
-
-  &.nextBtn {
-    position: absolute;
-    right: 5px;
-    top: 50%;
-
-    z-index: 1;
-
-    ${MQ(Breakpoints.md)} {
-      right: 10%;
-    }
-  }
-`;
 
 export const LimitedEdition = ({
   width,
@@ -90,7 +35,7 @@ export const LimitedEdition = ({
     if (isDesctop) {
       arrayViewLength = 4;
     } else if (isTablet) {
-      arrayViewLength = 3;
+      arrayViewLength = 4;
     } else {
       arrayViewLength = 2;
     }
@@ -173,7 +118,6 @@ export const LimitedEdition = ({
         <Title>limited&nbsp;</Title>
         <AccentTitle>edition</AccentTitle>
       </TitleWrapper>
-      {/* <Arrows changeSlide={changeSlide} /> */}
       <Arrow className="backBtn" onClick={() => changeSlide(-1)}>
         <BackSvg />
       </Arrow>
@@ -190,7 +134,7 @@ export const LimitedEdition = ({
             </ProductsBlock>
           ))}
         </Wrapper>
-      </SliderContainer>{" "}
+      </SliderContainer>
       <Arrow className="nextBtn" onClick={() => changeSlide(1)}>
         <NextSvg />
       </Arrow>

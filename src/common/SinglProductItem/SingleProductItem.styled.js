@@ -4,11 +4,10 @@ import styled from "styled-components";
 
 export const ProductItem = styled.div`
   margin: 7px;
-  width: 185px;
-  height: 292px;
+  width: 155px;
 
-  ${MQ(Breakpoints.md)} {
-    margin: 15px;
+  ${MQ(Breakpoints.lg)} {
+    margin: 10px;
     width: 330px;
     height: 495px;
   }
@@ -21,7 +20,7 @@ export const ProductImg = styled.img`
 
   object-fit: cover;
 
-  ${MQ(Breakpoints.md)} {
+  ${MQ(Breakpoints.lg)} {
     height: 400px;
   }
 `;

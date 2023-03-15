@@ -1,7 +1,7 @@
 export const Breakpoints = {
   sm: 320,
-  md: 950,
-  lg: 1450,
+  md: 800,
+  lg: 1420,
 };
 
 export const MQ = (minWidth) => {

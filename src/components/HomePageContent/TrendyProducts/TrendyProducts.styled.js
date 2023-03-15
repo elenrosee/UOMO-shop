@@ -1,14 +1,11 @@
-import { Breakpoints, MQ } from "common";
+import { Breakpoints, Container, MQ } from "common";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const TrendyProductsContainer = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1410px;
+export const TrendyProductsContainer = styled(Container)`
   margin-bottom: 50px;
 
-  ${MQ(Breakpoints.md)} {
+  ${MQ(Breakpoints.lg)} {
     margin-bottom: 100px;
   }
 `;
@@ -68,9 +65,9 @@ export const ProductsList = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: -7px;
+  margin: -5px;
 
   ${MQ(Breakpoints.md)} {
-    margin: -15px;
+    margin: -10px;
   }
 `;
