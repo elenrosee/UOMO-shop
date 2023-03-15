@@ -28,10 +28,14 @@ export const Banner = () => {
           <SlideLink className={"accentBanner"}>Shop Now</SlideLink>
         </TitleContainer>
         {isMobile && (
-          <Img src={girlOnRedMob} alt={"couple"} className={"accentImage"} />
+          <Img
+            src={girlOnRedMob}
+            alt={"girl on red"}
+            className={"accentImage"}
+          />
         )}
         {isDesctop && (
-          <Img src={girlOnRed} alt={"couple"} className={"accentImage"} />
+          <Img src={girlOnRed} alt={"girl on red"} className={"accentImage"} />
         )}
       </BannerItem>
 

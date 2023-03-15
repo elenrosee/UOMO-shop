@@ -35,7 +35,30 @@ export const userReducer = createReducer(initialState, (builder) => {
     })
 
     .addCase(addToShopingCart, (state, action) => {
-      state.shopingCart = [{ ...action.payload }, ...state.shopingCart];
+      const { id, size, color, quantity } = action.payload;
+
+      const stateProduct = state.shopingCart.find(
+        (i) => i.id === id && i.size === size && i.color === color
+      );
+
+      if (stateProduct) {
+        const newStateProduct = {
+          id,
+          size,
+          color,
+          quantity: (stateProduct.quantity += quantity),
+        };
+
+        state.shopingCart = [
+          { ...newStateProduct },
+          ...state.shopingCart?.filter(
+            (i) =>
+              i.id !== id || (i.id === id && i.color !== color && i.d !== size)
+          ),
+        ];
+      } else {
+        state.shopingCart = [{ ...action.payload }, ...state.shopingCart];
+      }
     })
 
     .addCase(removeFromShopingCart, (state, action) => {
@@ -49,8 +72,6 @@ export const userReducer = createReducer(initialState, (builder) => {
     })
 
     .addCase(removeFromWishList, (state, action) => {
-      state.wishlist = state.shopingCart?.filter(
-        (i) => i.id !== action.payload.id
-      );
+      state.wishlist = state.wishlist?.filter((i) => i !== action.payload);
     });
 });

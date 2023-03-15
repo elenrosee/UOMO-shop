@@ -1,15 +1,3 @@
-export {
-  register,
-  logIn,
-  logOut,
-  fetchCurrentUser,
-  updateUserBalance,
-  fetchUserBalance,
-} from "./userActions";
+export { register } from "./userActions";
 
-export {
-  getIsLoggedIn,
-  getUserMail,
-  getIsFetchingCurrent,
-  getUserBalance,
-} from "./userSelectors";
+export { getIsLoggedIn, getPurchasesQuantity } from "./userSelectors";

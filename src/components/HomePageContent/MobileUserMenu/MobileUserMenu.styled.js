@@ -18,6 +18,11 @@ export const Item = styled.li`
 export const MenuBtn = styled.button`
   background: inherit;
   border: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
 `;
 
 export const BtnText = styled.p`

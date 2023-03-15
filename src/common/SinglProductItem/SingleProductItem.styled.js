@@ -38,6 +38,11 @@ export const ProductCategory = styled.p`
   color: var(--secondary-text-color);
 `;
 
+export const AddToWishListBtn = styled.button`
+  background-color: transparent;
+  border: none;
+`;
+
 export const ProductNameLink = styled(Link)`
   display: block;
 

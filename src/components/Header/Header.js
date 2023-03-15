@@ -11,9 +11,18 @@ import {
 } from "icons";
 import { HeaderWraper, UserMenu, UserMenuBtn } from "./Header.styled";
 import { PageNavBar } from "./PageNavBar";
+import { useSelector } from "react-redux";
+import {
+  getPurchasesQuantity,
+  getUserShopingCart,
+  getUserWishlist,
+} from "redux/user/userSelectors";
 
 export const Header = () => {
   const [isOpenMobileNavBar, setIsOpenMobileNavBar] = useState(false);
+
+  const wishListLangth = useSelector(getUserWishlist).length;
+  const purchasesQuantity = useSelector(getPurchasesQuantity);
 
   const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
   const isTablet = useMediaQuery({ minWidth: Breakpoints.md });
@@ -34,7 +43,7 @@ export const Header = () => {
             </UserMenuBtn>
             <LogoSvg />
             <UserMenuBtn>
-              <ShoppingBagSvg shoppingCounter={3} />
+              <ShoppingBagSvg shoppingCounter={purchasesQuantity} />
             </UserMenuBtn>
           </HeaderWraper>
           {isOpenMobileNavBar && (
@@ -59,12 +68,12 @@ export const Header = () => {
             </li>
             <li>
               <UserMenuBtn>
-                <HeartSvg />
+                <HeartSvg shoppingCounter={wishListLangth} />
               </UserMenuBtn>
             </li>
             <li>
               <UserMenuBtn>
-                <ShoppingBagSvg shoppingCounter={3} />
+                <ShoppingBagSvg shoppingCounter={purchasesQuantity} />
               </UserMenuBtn>
             </li>
             <li>

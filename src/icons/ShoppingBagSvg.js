@@ -6,7 +6,7 @@ export const SvgWrapper = styled.div`
 
   &::before {
     content: ${({ shoppingCounter }) =>
-      shoppingCounter ? `"${shoppingCounter}"` : `"0"`};
+      shoppingCounter ? `"${shoppingCounter}"` : ``};
 
     display: inline-block;
     font-size: small;

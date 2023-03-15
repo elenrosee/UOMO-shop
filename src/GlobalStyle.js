@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   --text-color: #222;
   --secondary-text-color: #767676;
   --background-footer-color: #CFCDCD;
-
+  --accent-red-color: #a62334;
 }
 
 /* to hide arrows in input type="number"*/
