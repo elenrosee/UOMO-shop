@@ -3,8 +3,8 @@ import { useMediaQuery } from "react-responsive";
 import { BlockContainer, ColectionImage } from "./ShopCtegoriesBlock.styled";
 
 export const ShopCtegoriesBlock = ({ data, settings }) => {
-  const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
-  const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
+  const isMobileOrTablet = useMediaQuery({ maxWidth: Breakpoints.lg - 1 });
+  const isDesctop = useMediaQuery({ minWidth: Breakpoints.lg });
 
   const { width, heigth, color, isImg = false, imgWidth } = settings;
   const { img, mobImg, description, title, accentTitle, link, text, linkText } =
@@ -23,7 +23,7 @@ export const ShopCtegoriesBlock = ({ data, settings }) => {
       {isImg && isDesctop && (
         <ColectionImage alt={img} src={img} width={imgWidth} />
       )}
-      {isImg && isMobile && (
+      {isImg && isMobileOrTablet && (
         <ColectionImage alt={mobImg} src={img} width={imgWidth} />
       )}
     </BlockContainer>

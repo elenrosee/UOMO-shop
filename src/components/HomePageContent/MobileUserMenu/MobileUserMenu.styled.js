@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.ul`
@@ -16,6 +17,16 @@ export const Item = styled.li`
   }
 `;
 export const MenuBtn = styled.button`
+  background: inherit;
+  border: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+`;
+
+export const MenuLink = styled(Link)`
   background: inherit;
   border: none;
 

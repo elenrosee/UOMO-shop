@@ -12,7 +12,7 @@ export const ShopColectionsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
-  ${MQ(Breakpoints.md)} {
+  ${MQ(Breakpoints.lg)} {
     margin-top: 75px;
     margin-bottom: 75px;
     flex-wrap: nowrap;
@@ -86,12 +86,12 @@ const mobileSettings = [
 ];
 
 export const ShopColections = () => {
-  const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
-  const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
+  const isMobileOrTablet = useMediaQuery({ maxWidth: Breakpoints.lg - 1 });
+  const isDesctop = useMediaQuery({ minWidth: Breakpoints.lg });
 
   return (
     <>
-      {isMobile && (
+      {isMobileOrTablet && (
         <ShopColectionsContainer>
           <ShopCtegoriesBlock
             settings={mobileSettings[0]}

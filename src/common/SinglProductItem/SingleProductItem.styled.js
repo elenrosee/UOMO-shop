@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ProductItem = styled.div`
-  margin: 7px;
+  margin: 5px;
   width: 155px;
 
   ${MQ(Breakpoints.lg)} {

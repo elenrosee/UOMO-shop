@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Breakpoints } from "common";
+
 import {
   LogoSvg,
   HeartSvg,
@@ -14,7 +14,6 @@ import { PageNavBar } from "./PageNavBar";
 import { useSelector } from "react-redux";
 import {
   getPurchasesQuantity,
-  getUserShopingCart,
   getUserWishlist,
 } from "redux/user/userSelectors";
 
@@ -24,8 +23,7 @@ export const Header = () => {
   const wishListLangth = useSelector(getUserWishlist).length;
   const purchasesQuantity = useSelector(getPurchasesQuantity);
 
-  const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
-  const isTablet = useMediaQuery({ minWidth: Breakpoints.md });
+  const isMobileOrTablet = useMediaQuery({ maxWidth: "950px" });
 
   const openMobileNavBarToggle = () => {
     isOpenMobileNavBar
@@ -35,7 +33,7 @@ export const Header = () => {
 
   return (
     <>
-      {isMobile && (
+      {isMobileOrTablet && (
         <>
           <HeaderWraper>
             <UserMenuBtn onClick={openMobileNavBarToggle}>
@@ -51,7 +49,7 @@ export const Header = () => {
           )}
         </>
       )}
-      {isTablet && (
+      {!isMobileOrTablet && (
         <HeaderWraper>
           <LogoSvg />
           <PageNavBar />

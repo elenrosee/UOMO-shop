@@ -4,7 +4,13 @@ import {
   getPurchasesQuantity,
   getUserWishlist,
 } from "redux/user/userSelectors";
-import { BtnText, Item, MenuBtn, Wrapper } from "./MobileUserMenu.styled";
+import {
+  BtnText,
+  Item,
+  MenuBtn,
+  MenuLink,
+  Wrapper,
+} from "./MobileUserMenu.styled";
 
 export const MobileUserMenu = () => {
   const wishListLangth = useSelector(getUserWishlist).length;
@@ -13,16 +19,16 @@ export const MobileUserMenu = () => {
   return (
     <Wrapper>
       <Item>
-        <MenuBtn>
+        <MenuLink to="/home">
           <HomeSvg />
           <BtnText>Home</BtnText>
-        </MenuBtn>
+        </MenuLink>
       </Item>
       <Item>
-        <MenuBtn>
+        <MenuLink to="/shop/new-in">
           <ShoulderSvg />
           <BtnText>Shop</BtnText>
-        </MenuBtn>
+        </MenuLink>
       </Item>
       <Item>
         <MenuBtn>

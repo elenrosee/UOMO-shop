@@ -2,7 +2,12 @@ import { Breakpoints } from "common";
 import { instagramPostsImages } from "data/instagramPostsImages";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Container, Img, ImgWrapper, Title } from "./UomoInstagram.styled";
+import {
+  Img,
+  ImgWrapper,
+  InstagramContainer,
+  Title,
+} from "./UomoInstagram.styled";
 
 export const UomoInstagram = () => {
   const [items, setItems] = useState([]);
@@ -19,7 +24,7 @@ export const UomoInstagram = () => {
   const displayQuantity = isMobile ? 9 : 12;
 
   return (
-    <Container>
+    <InstagramContainer>
       <Title>@uomo</Title>
       <ImgWrapper>
         {items.map((item, index) => {
@@ -30,6 +35,6 @@ export const UomoInstagram = () => {
           );
         })}
       </ImgWrapper>
-    </Container>
+    </InstagramContainer>
   );
 };

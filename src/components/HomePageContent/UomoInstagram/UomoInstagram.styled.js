@@ -1,14 +1,14 @@
-import { Breakpoints, MQ } from "common";
+import { Breakpoints, Container, MQ } from "common";
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const InstagramContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
 
   margin-bottom: 50px;
 
-  ${MQ(Breakpoints.md)} {
+  ${MQ(Breakpoints.lg)} {
     margin-bottom: 80px;
   }
 `;
@@ -21,36 +21,37 @@ export const Title = styled.h3`
 
   margin-bottom: 20px;
 
-  ${MQ(Breakpoints.md)} {
+  ${MQ(Breakpoints.lg)} {
     margin-bottom: 40px;
   }
 `;
 export const ImgWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 384px;
-  height: 384px;
-  margin: -10px;
+  justify-content: center;
+  /* width: 384px;
+  height: 384px; */
+  margin: -5px;
 
   ${MQ(Breakpoints.md)} {
-    width: 1420px;
-    height: 466px;
+    /* width: 1420px;
+    height: 466px; */
     margin: -3px;
   }
 `;
 
 export const Img = styled.img`
   display: block;
-  height: 118px;
-  width: 118px;
+  height: 100px;
+  width: 100px;
 
   margin: 5px;
 
   object-fit: cover;
 
   ${MQ(Breakpoints.md)} {
-    height: 230px;
-    width: 230px;
+    height: 200px;
+    width: 200px;
 
     margin: 3px;
   }

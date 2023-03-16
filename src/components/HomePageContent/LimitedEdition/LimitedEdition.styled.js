@@ -1,7 +1,7 @@
-import { Breakpoints, MQ } from "common";
+import { Breakpoints, Container, MQ } from "common";
 import styled from "styled-components";
 
-export const LimitedEditionContainer = styled.div`
+export const LimitedEditionContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,7 +51,7 @@ export const SliderContainer = styled.div`
   }
 
   ${MQ(Breakpoints.lg)} {
-    width: 1410px;
+    width: 1400px;
   }
 `;
 
@@ -105,7 +105,7 @@ export const Arrow = styled.button`
     z-index: 1;
 
     ${MQ(Breakpoints.md)} {
-      left: 10%;
+      left: 3%;
     }
 
     ${MQ(Breakpoints.lg)} {
@@ -121,10 +121,10 @@ export const Arrow = styled.button`
     z-index: 1;
 
     ${MQ(Breakpoints.md)} {
-      right: 10%;
+      right: 3%;
     }
 
-    ${MQ(Breakpoints.md)} {
+    ${MQ(Breakpoints.lg)} {
       right: 5px;
     }
   }

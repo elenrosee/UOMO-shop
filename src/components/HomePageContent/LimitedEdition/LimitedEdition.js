@@ -2,7 +2,7 @@ import { Breakpoints, SingleProductItem } from "common";
 import { productsData } from "data/productsData";
 import { useCallback, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-// import { Arrows } from './Arrows'
+
 import {
   AccentTitle,
   Arrow,
