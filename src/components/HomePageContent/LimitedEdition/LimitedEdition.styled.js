@@ -1,4 +1,5 @@
 import { Breakpoints, Container, MQ } from "common";
+import { MQmax } from "common/Breakpoints/mq";
 import styled from "styled-components";
 
 export const LimitedEditionContainer = styled(Container)`
@@ -8,8 +9,14 @@ export const LimitedEditionContainer = styled(Container)`
   position: relative;
 
   margin-bottom: 50px;
+  max-width: 400px;
+
+  ${MQ(Breakpoints.md)} {
+    max-width: 741px;
+  }
 
   ${MQ(Breakpoints.lg)} {
+    max-width: max-content;
     margin-bottom: 80px;
   }
 `;
@@ -47,7 +54,7 @@ export const SliderContainer = styled.div`
   width: 320px;
 
   ${MQ(Breakpoints.md)} {
-    width: 675px;
+    width: 661px;
   }
 
   ${MQ(Breakpoints.lg)} {
@@ -101,15 +108,10 @@ export const Arrow = styled.button`
     position: absolute;
     left: 5px;
     top: 50%;
-
     z-index: 1;
 
-    ${MQ(Breakpoints.md)} {
-      left: 3%;
-    }
-
     ${MQ(Breakpoints.lg)} {
-      left: 5px;
+      left: 0;
     }
   }
 
@@ -120,12 +122,8 @@ export const Arrow = styled.button`
 
     z-index: 1;
 
-    ${MQ(Breakpoints.md)} {
-      right: 3%;
-    }
-
     ${MQ(Breakpoints.lg)} {
-      right: 5px;
+      right: 0;
     }
   }
 `;

@@ -16,6 +16,7 @@ import {
   getPurchasesQuantity,
   getUserWishlist,
 } from "redux/user/userSelectors";
+import { Breakpoints } from "common";
 
 export const Header = () => {
   const [isOpenMobileNavBar, setIsOpenMobileNavBar] = useState(false);
@@ -23,7 +24,7 @@ export const Header = () => {
   const wishListLangth = useSelector(getUserWishlist).length;
   const purchasesQuantity = useSelector(getPurchasesQuantity);
 
-  const isMobileOrTablet = useMediaQuery({ maxWidth: "950px" });
+  const isMobileOrTablet = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
 
   const openMobileNavBarToggle = () => {
     isOpenMobileNavBar

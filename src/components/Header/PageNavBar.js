@@ -27,12 +27,12 @@ export const PageNavBar = ({ openMobileNavBarToggle = false }) => {
       >
         JOURNAL
       </PageNavLink>
-      <PageNavLink
+      {/* <PageNavLink
         to="/lookbook"
         onClick={() => openMobileNavBarToggle && openMobileNavBarToggle()}
       >
         LOOKBOOK
-      </PageNavLink>
+      </PageNavLink> */}
       <PageNavLink
         to="/pages"
         onClick={() => openMobileNavBarToggle && openMobileNavBarToggle()}

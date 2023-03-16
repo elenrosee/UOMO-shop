@@ -20,7 +20,7 @@ export const HeroImg = styled.img`
 
   object-fit: cover;
 `;
-export const HeroTextContent = styled(Container)`
+export const HeroTextContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

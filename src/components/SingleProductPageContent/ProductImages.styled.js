@@ -54,6 +54,12 @@ export const MainImage = styled.img`
   margin-bottom: 12px;
 
   ${MQ(Breakpoints.md)} {
+    height: 650px;
+    width: 670px;
+    margin-bottom: 0;
+  }
+
+  ${MQ(Breakpoints.lg)} {
     height: 700px;
     width: 712px;
     margin-bottom: 0;

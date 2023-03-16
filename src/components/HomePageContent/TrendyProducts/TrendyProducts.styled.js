@@ -4,6 +4,9 @@ import styled from "styled-components";
 
 export const TrendyProductsContainer = styled(Container)`
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   ${MQ(Breakpoints.lg)} {
     margin-bottom: 100px;
@@ -63,11 +66,6 @@ export const SeeAllProductsLink = styled(NavLink)`
 
 export const ProductsList = styled.div`
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  margin: -5px;
-
-  ${MQ(Breakpoints.md)} {
-    margin: -10px;
-  }
+  justify-content: center;
 `;

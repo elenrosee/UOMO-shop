@@ -19,7 +19,7 @@ export const ProductInfo = styled.div`
   padding-top: 30px;
   padding-bottom: 50px;
 
-  ${MQ(Breakpoints.md)} {
+  ${MQ(Breakpoints.lg)} {
     padding-top: 0;
     padding-left: 50px;
   }
