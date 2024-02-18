@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { Link } from "react-router-dom";
-import { Breakpoints, MQ } from "common/Breakpoints";
+import { Breakpoints, MQ } from "../../common";
 
 const TitleContainer = styled.div`
   display: flex;

@@ -1,4 +1,4 @@
-import { CartSvg, HeadphoneSvg, ShieldSvg } from "icons";
+import { CartSvg, HeadphoneSvg, ShieldSvg } from "../../../icons";
 import {
   IconsList,
   ListItem,

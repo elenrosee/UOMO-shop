@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { PriceWrapper } from "common/SinglProductItem/SingleProductItem.styled";
-import { HeartSvg } from "icons";
+import { PriceWrapper } from "../../common/SinglProductItem/SingleProductItem.styled";
+import { HeartSvg } from "../../icons";
 import { Input } from "./Input";
 import { ProductColorsList } from "./ProductColorsList";
 import { ProductImages } from "./ProductImages";
@@ -18,12 +18,12 @@ import {
 } from "./SingleProductPageContent.styled";
 import { RelatedProducts } from "./RelatedProducts";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserWishlist } from "redux/user/userSelectors";
+import { getUserWishlist } from "../../redux/user/userSelectors";
 import {
   addToShopingCart,
   addToWishList,
   removeFromWishList,
-} from "redux/user/userActions";
+} from "../../redux/user/userActions";
 
 export const SingleProductPageContent = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState(null);

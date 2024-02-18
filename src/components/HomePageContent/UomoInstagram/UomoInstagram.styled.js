@@ -1,4 +1,4 @@
-import { Breakpoints, Container, MQ } from "common";
+import { Breakpoints, Container, MQ } from "../../../common";
 import styled from "styled-components";
 
 export const InstagramContainer = styled(Container)`

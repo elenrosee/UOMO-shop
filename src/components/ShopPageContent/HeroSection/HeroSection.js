@@ -1,4 +1,4 @@
-import { Breakpoints } from "common";
+import { Breakpoints } from "../../../common";
 import { useMediaQuery } from "react-responsive";
 import {
   CategoriesList,

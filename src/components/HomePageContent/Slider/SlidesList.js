@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { SliderContext } from "./Slider";
-import { Breakpoints, MQ } from "common";
+import { Breakpoints, MQ } from "../../../common";
 
 import styled from "styled-components";
 import { SliderTitle } from "./SliderTitle";

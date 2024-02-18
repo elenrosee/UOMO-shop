@@ -1,5 +1,5 @@
-import { Breakpoints, SingleProductItem } from "common";
-import { productsData } from "data/productsData";
+import { Breakpoints, SingleProductItem } from "../../../common";
+import { productsData } from "../../../data/productsData";
 import { useCallback, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
@@ -14,7 +14,7 @@ import {
   Wrapper,
 } from "./LimitedEdition.styled";
 
-import { NextSvg, BackSvg } from "icons";
+import { NextSvg, BackSvg } from "../../../icons";
 
 export const LimitedEdition = ({
   width,

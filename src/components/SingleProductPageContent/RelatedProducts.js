@@ -1,11 +1,11 @@
-import { ProductsList } from "common";
+import { ProductsList } from "../../common";
 import {
   AccentTitle,
   Title,
   TitleWrapper,
-} from "components/HomePageContent/LimitedEdition/LimitedEdition.styled";
+} from "../HomePageContent/LimitedEdition/LimitedEdition.styled";
 
-import { productsData } from "data/productsData";
+import { productsData } from "../../data/productsData";
 import { useEffect, useState } from "react";
 
 export const RelatedProducts = ({ category, id }) => {

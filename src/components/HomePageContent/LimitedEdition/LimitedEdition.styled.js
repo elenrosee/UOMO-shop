@@ -1,5 +1,4 @@
-import { Breakpoints, Container, MQ } from "common";
-import { MQmax } from "common/Breakpoints/mq";
+import { Breakpoints, Container, MQ } from "../../../common";
 import styled from "styled-components";
 
 export const LimitedEditionContainer = styled(Container)`

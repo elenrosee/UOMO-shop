@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Breakpoints, MQ } from "common";
+import { Breakpoints, MQ } from "../../../common";
 
 export const BlockContainer = styled.div`
   width: ${({ width }) => width};

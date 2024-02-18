@@ -1,5 +1,5 @@
-import { Breakpoints, MQ } from "common";
-import { ProductPrice } from "common/SinglProductItem/SingleProductItem.styled";
+import { Breakpoints, MQ } from "../../common";
+import { ProductPrice } from "../../common/SinglProductItem/SingleProductItem.styled";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`

@@ -1,4 +1,4 @@
-import { Breakpoints } from "common";
+import { Breakpoints } from "../../common";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import {

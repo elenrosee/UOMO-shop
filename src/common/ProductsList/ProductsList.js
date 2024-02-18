@@ -1,4 +1,4 @@
-import { SingleProductItem } from "common";
+import { SingleProductItem } from "../SinglProductItem";
 import { List, ProductsListContainer } from "./ProductsList.styled";
 
 export const ProductsList = ({ products }) => {

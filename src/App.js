@@ -1,13 +1,12 @@
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import { Route, Routes } from "react-router";
 
 import { GlobalStyle } from "./GlobalStyle";
 
-import { Footer, Header } from "components";
-
-const HomeView = lazy(() => import("./views/HomeView"));
-const ShopView = lazy(() => import("./views/ShopView"));
-const SingleProductView = lazy(() => import("./views/SingleProductView"));
+import { Footer, Header } from "./components";
+import { HomeView } from "./views/HomeView";
+import { ShopView } from "./views/ShopView";
+import { SingleProductView } from "./views/SingleProductView";
 
 function App() {
   return (

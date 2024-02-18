@@ -1,5 +1,5 @@
-import { Breakpoints } from "common";
-import { instagramPostsImages } from "data/instagramPostsImages";
+import { Breakpoints } from "../../../common";
+import { instagramPostsImages } from "../../../data/instagramPostsImages";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import {

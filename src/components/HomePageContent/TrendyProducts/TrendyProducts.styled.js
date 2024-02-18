@@ -1,4 +1,4 @@
-import { Breakpoints, Container, MQ } from "common";
+import { Breakpoints, Container, MQ } from "../../../common";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 

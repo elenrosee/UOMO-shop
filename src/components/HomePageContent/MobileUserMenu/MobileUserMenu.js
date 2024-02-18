@@ -1,9 +1,9 @@
-import { HeartSvg, HomeSvg, ShoppingBagSvg, ShoulderSvg } from "icons";
+import { HeartSvg, HomeSvg, ShoppingBagSvg, ShoulderSvg } from "../../../icons";
 import { useSelector } from "react-redux";
 import {
   getPurchasesQuantity,
   getUserWishlist,
-} from "redux/user/userSelectors";
+} from "../../../redux/user/userSelectors";
 import {
   BtnText,
   Item,

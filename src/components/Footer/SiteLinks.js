@@ -1,4 +1,4 @@
-import { productsCategories } from "data/productsCategories";
+import { productsCategories } from "../../data/productsCategories";
 import { LinksList } from "./LinksList";
 
 export const SiteLinks = () => {

@@ -1,6 +1,6 @@
 import { useMediaQuery } from "react-responsive";
 
-import { Breakpoints } from "common";
+import { Breakpoints } from "../../common";
 import {
   Banner,
   LimitedEdition,
@@ -11,9 +11,9 @@ import {
   ShopColections,
   Support,
   TrendyProducts,
-} from "components";
+} from "../../components";
 
-export default function ShopView() {
+export const HomeView = () => {
   const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
 
   return (
@@ -29,4 +29,4 @@ export default function ShopView() {
       <Support />
     </>
   );
-}
+};

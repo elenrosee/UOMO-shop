@@ -1,7 +1,8 @@
-import { Breakpoints, MQ } from "common";
-import { PaymentsCompanysSvg } from "icons/PaymentsCompanysSvg";
+import { Breakpoints, MQ } from "../../common";
+
 import { useState } from "react";
 import styled from "styled-components";
+import { PaymentsCompanysSvg } from "../../icons/PaymentsCompanysSvg";
 
 export const Wrapper = styled.div`
   width: 345px;

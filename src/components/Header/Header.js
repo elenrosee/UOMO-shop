@@ -8,15 +8,15 @@ import {
   NavIconSvg,
   ShoppingBagSvg,
   UserSvg,
-} from "icons";
+} from "../../icons";
 import { HeaderWraper, UserMenu, UserMenuBtn } from "./Header.styled";
 import { PageNavBar } from "./PageNavBar";
 import { useSelector } from "react-redux";
 import {
   getPurchasesQuantity,
   getUserWishlist,
-} from "redux/user/userSelectors";
-import { Breakpoints } from "common";
+} from "../../redux/user/userSelectors";
+import { Breakpoints } from "../../common";
 
 export const Header = () => {
   const [isOpenMobileNavBar, setIsOpenMobileNavBar] = useState(false);

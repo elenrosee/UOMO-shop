@@ -10,9 +10,9 @@ import {
   TrendyProductsContainer,
 } from "./TrendyProducts.styled";
 
-import { productsData } from "data/productsData";
+import { productsData } from "../../../data/productsData";
 import { useMediaQuery } from "react-responsive";
-import { Breakpoints, SingleProductItem } from "common";
+import { Breakpoints, SingleProductItem } from "../../../common";
 
 const sectionsName = ["all", "newarrivals", "best seller", "top rating"];
 

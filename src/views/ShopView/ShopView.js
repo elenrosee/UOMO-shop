@@ -1,7 +1,7 @@
-import { ShopPageContent } from "components";
 import { useParams } from "react-router-dom";
+import { ShopPageContent } from "../../components";
 
-export default function ShopView() {
+export const ShopView = () => {
   const params = useParams();
   const productCategory = params.category;
 
@@ -10,4 +10,4 @@ export default function ShopView() {
       <ShopPageContent productCategory={productCategory} />
     </>
   );
-}
+};

@@ -1,13 +1,10 @@
-import { Container } from "common";
-import { SingleProductPageContent } from "components";
+import { SingleProductPageContent } from "../../components/SingleProductPageContent";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { productsData } from "data/productsData";
-import styled from "styled-components";
+import { productsData } from "../../data/productsData";
+import { Container } from "../../common";
 
-export const Wrapper = styled(Container)``;
-
-export default function SingleProductView() {
+export const SingleProductView = () => {
   const params = useParams();
   const productId = params.id;
 
@@ -26,8 +23,8 @@ export default function SingleProductView() {
   }, [productId]);
 
   return (
-    <Wrapper>
+    <Container>
       {product && <SingleProductPageContent product={product} />}
-    </Wrapper>
+    </Container>
   );
-}
+};

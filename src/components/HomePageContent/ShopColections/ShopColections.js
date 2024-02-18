@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-import { shopColectionsData } from "data/shopColectionsData";
-import { ShopCtegoriesBlock } from "./ShopCtegoriesBlock";
-import { Breakpoints, MQ } from "common";
+import { Breakpoints, MQ } from "../../../common";
 import { useMediaQuery } from "react-responsive";
+import { ShopCtegoriesBlock } from "./ShopCtegoriesBlock";
+import { shopColectionsData } from "../../../data/shopColectionsData";
 
 export const ShopColectionsContainer = styled.div`
   margin-bottom: 15px;

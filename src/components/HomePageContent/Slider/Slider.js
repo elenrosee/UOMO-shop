@@ -1,13 +1,11 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { FollowUs } from "./FollowUs";
-
-import { images } from "data/sliderData";
 import { Dots } from "./Dots";
 import { SlidesList } from "./SlidesList";
-
 import { SliderContainer, SliderWraper } from "./Slider.styled";
 import { useMediaQuery } from "react-responsive";
-import { Breakpoints } from "common";
+import { images } from "../../../data/sliderData";
+import { Breakpoints } from "../../../common";
 
 export const SliderContext = createContext();
 

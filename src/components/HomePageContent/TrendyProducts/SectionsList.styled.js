@@ -1,4 +1,4 @@
-import { Breakpoints, MQ } from "common";
+import { Breakpoints, MQ } from "../../../common";
 import styled from "styled-components";
 
 export const ProductSectionsList = styled.ul`

@@ -1,4 +1,9 @@
-import { FacebookSvg, InstagramSvg, PinterestSvg, TwitterSvg } from "icons";
+import {
+  FacebookSvg,
+  InstagramSvg,
+  PinterestSvg,
+  TwitterSvg,
+} from "../../icons";
 import styled from "styled-components";
 
 export const FollowUsSocial = styled.ul`

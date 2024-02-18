@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Breakpoints, Container, MQ } from "common";
+import { Breakpoints, Container, MQ } from "../../common";
 
 export const HeaderWraper = styled(Container)`
   display: flex;

@@ -1,4 +1,4 @@
-import { Breakpoints, MQ } from "common";
+import { Breakpoints, MQ } from "../../../common";
 import { useContext } from "react";
 import styled from "styled-components";
 import { SliderContext } from "./Slider";

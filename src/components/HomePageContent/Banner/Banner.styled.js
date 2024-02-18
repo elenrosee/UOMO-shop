@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { Breakpoints, MQ } from "common";
+import { Breakpoints, MQ } from "../../../common";
 
 export const Wrapper = styled.div`
   margin-left: 15px;

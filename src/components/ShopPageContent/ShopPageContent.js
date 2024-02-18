@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { HeroSection } from "./HeroSection";
-import { productsData } from "data/productsData";
-import { productsCategories } from "data/productsCategories";
-import { ProductsList } from "common";
+import { productsData } from "../../data/productsData";
+import { productsCategories } from "../../data/productsCategories";
+import { ProductsList } from "../../common";
 
 export const ShopPageContent = ({ productCategory }) => {
   const [products, setProducts] = useState([]);

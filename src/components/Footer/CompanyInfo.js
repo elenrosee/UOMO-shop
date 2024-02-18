@@ -1,5 +1,5 @@
-import { Breakpoints, MQ, SocialLinks } from "common";
-import { LogoSvg } from "icons";
+import { Breakpoints, MQ, SocialLinks } from "../../common";
+import { LogoSvg } from "../../icons";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`

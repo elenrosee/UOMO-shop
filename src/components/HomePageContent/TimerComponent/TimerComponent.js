@@ -1,4 +1,4 @@
-import { Breakpoints, MQ } from "common";
+import { Breakpoints, MQ } from "../../../common";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Timer } from "./Timer";

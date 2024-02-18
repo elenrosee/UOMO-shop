@@ -1,4 +1,4 @@
-import { Breakpoints, SecondaryTitle } from "common";
+import { Breakpoints, SecondaryTitle } from "../../../common";
 import { useMediaQuery } from "react-responsive";
 import { BlockContainer, ColectionImage } from "./ShopCtegoriesBlock.styled";
 

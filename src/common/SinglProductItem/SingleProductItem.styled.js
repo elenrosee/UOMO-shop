@@ -1,6 +1,7 @@
-import { Breakpoints, MQ } from "common/Breakpoints";
+// import { Breakpoints, MQ } from '../../common'
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Breakpoints, MQ } from "../Breakpoints";
 
 export const ProductItem = styled.div`
   margin: 5px;
