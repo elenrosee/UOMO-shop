@@ -1,6 +1,6 @@
-import { Breakpoints, MQ } from "../../common";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { Breakpoints, MQ } from "../../common";
 
 export const NavBarWrapper = styled.div`
   display: flex;

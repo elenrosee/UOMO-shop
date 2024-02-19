@@ -6,12 +6,12 @@ export const ShopCtegoriesBlock = ({ data, settings }) => {
   const isMobileOrTablet = useMediaQuery({ maxWidth: Breakpoints.lg - 1 });
   const isDesctop = useMediaQuery({ minWidth: Breakpoints.lg });
 
-  const { width, heigth, color, isImg = false, imgWidth } = settings;
+  const { width, height, color, isImg = false, imgWidth } = settings;
   const { img, mobImg, description, title, accentTitle, link, text, linkText } =
     data;
 
   return (
-    <BlockContainer width={width} color={color} heigth={heigth}>
+    <BlockContainer width={width} color={color} height={height}>
       <SecondaryTitle
         description={description}
         title={title}

@@ -1,9 +1,15 @@
 import styled from "styled-components";
 import { Breakpoints, MQ } from "../../../common";
 
-export const BlockContainer = styled.div`
+type BlockContainerProps = {
+  width: string;
+  height: string;
+  color: string;
+};
+
+export const BlockContainer = styled.div<BlockContainerProps>`
   width: ${({ width }) => width};
-  height: ${({ heigth }) => heigth};
+  height: ${({ height }) => height};
   background-color: ${({ color }) => color};
 
   display: flex;

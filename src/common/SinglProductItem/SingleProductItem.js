@@ -62,7 +62,7 @@ export const SingleProductItem = ({ item }) => {
         <ProductPrice>${price}</ProductPrice>
       ) : (
         <PriceWrapper>
-          <ProductPrice crossedOut={true} color={"var(--secondary-text-color)"}>
+          <ProductPrice color={"var(--secondary-text-color)"}>
             ${price}
           </ProductPrice>
           <ProductPrice color={"var(--accent-red-color)"}>

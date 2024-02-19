@@ -72,9 +72,12 @@ export const PriceWrapper = styled.div`
   display: flex;
 `;
 
-export const ProductPrice = styled.p`
-  text-decoration: ${({ crossedOut }) =>
-    crossedOut ? "line-through 2px" : "none"};
+type ProductPriceProps = {
+  color?: string;
+};
+
+export const ProductPrice = styled.p<ProductPriceProps>`
+  text-decoration: ${({ color }) => (color ? "line-through 2px" : "none")};
   color: ${({ color }) => (!color ? "#222" : color)};
   font-size: 16px;
 

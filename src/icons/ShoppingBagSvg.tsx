@@ -1,12 +1,17 @@
 import styled from "styled-components";
+import { useSelector } from "react-redux";
+import { getPurchasesQuantity } from "../redux/user";
 
-export const SvgWrapper = styled.div`
+type ShoppingBagProps = {
+  $counter: number;
+};
+
+export const SvgWrapper = styled.div<ShoppingBagProps>`
   position: relative;
   width: 22px;
 
   &::before {
-    content: ${({ shoppingCounter }) =>
-      shoppingCounter ? `"${shoppingCounter}"` : ``};
+    content: ${({ $counter }) => ($counter ? `${$counter}` : "")};
 
     display: inline-block;
     font-size: small;
@@ -24,9 +29,11 @@ export const SvgWrapper = styled.div`
   }
 `;
 
-export const ShoppingBagSvg = ({ shoppingCounter }) => {
+export const ShoppingBagSvg = () => {
+  const counter: number = useSelector(getPurchasesQuantity);
+
   return (
-    <SvgWrapper shoppingCounter={shoppingCounter}>
+    <SvgWrapper $counter={counter}>
       <svg
         width="20"
         height="20"
