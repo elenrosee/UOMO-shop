@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Breakpoints, MQ } from "../../../common";
+import { ReactNode } from "react";
+
+interface SlideLinkProps {
+  className?: string;
+  children: ReactNode;
+  to: string;
+}
 
 export const Wrapper = styled.div`
   margin-left: 15px;
@@ -93,7 +100,7 @@ export const Title = styled.h4`
   }
 `;
 
-export const SlideLink = styled(NavLink)`
+export const SlideLink = styled(NavLink)<SlideLinkProps>`
   font-weight: 500;
   position: relative;
 

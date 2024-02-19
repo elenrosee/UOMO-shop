@@ -1,6 +1,6 @@
 import { Breakpoints, SingleProductItem } from "../../../common";
-import { productsData } from "../../../data/productsData";
-import { useCallback, useEffect, useState } from "react";
+import { Product, productsData } from "../../../data/productsData";
+import { FC, useCallback, useEffect, useState, TouchEvent } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import {
@@ -16,21 +16,26 @@ import {
 
 import { NextSvg, BackSvg } from "../../../icons";
 
-export const LimitedEdition = ({
-  width,
-  height,
+interface LimitedEditionProps {
+  autoPlay: boolean;
+  autoPlayTime: number;
+}
+
+type ItemsArraySliderType = Product[][];
+
+export const LimitedEdition: FC<LimitedEditionProps> = ({
   autoPlay = true,
   autoPlayTime = 5000,
 }) => {
-  const [items, setItems] = useState([]);
-  const [slide, setSlide] = useState(0);
-  const [touchPosition, setTouchPosition] = useState(null);
+  const [items, setItems] = useState<ItemsArraySliderType>([]);
+  const [slide, setSlide] = useState<number>(0);
+  const [touchPosition, setTouchPosition] = useState<number | null>(null);
 
   const isTablet = useMediaQuery({ minWidth: Breakpoints.md });
   const isDesctop = useMediaQuery({ minWidth: Breakpoints.lg });
 
   useEffect(() => {
-    let arrayViewLength;
+    let arrayViewLength: number;
 
     if (isDesctop) {
       arrayViewLength = 4;
@@ -41,20 +46,20 @@ export const LimitedEdition = ({
     }
 
     const loadData = () => {
-      const itemsSubarrey = [];
+      const itemsSubarray: ItemsArraySliderType = [];
 
       for (
         let i = 0;
         i < Math.ceil(productsData.length / arrayViewLength);
         i++
       ) {
-        itemsSubarrey[i] = productsData.slice(
+        itemsSubarray[i] = productsData.slice(
           i * arrayViewLength,
-          i * arrayViewLength + arrayViewLength
+          i * arrayViewLength + arrayViewLength,
         );
       }
 
-      setItems(itemsSubarrey);
+      setItems(itemsSubarray);
     };
 
     loadData();
@@ -72,16 +77,16 @@ export const LimitedEdition = ({
 
       setSlide(slideNumber);
     },
-    [items.length, slide]
+    [items.length, slide],
   );
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: TouchEvent) => {
     const touchDown = e.touches[0].clientX;
 
     setTouchPosition(touchDown);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: TouchEvent) => {
     if (touchPosition === null) {
       return;
     }

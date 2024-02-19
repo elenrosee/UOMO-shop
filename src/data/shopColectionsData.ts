@@ -5,7 +5,19 @@ import tshirtMob from "../images/tshirt_mob.jpg";
 import tshirt1 from "../images/tshirt1.jpg";
 import tshirt1Mob from "../images/tshirt1_mob.jpg";
 
-export const shopColectionsData = [
+export type ColectionCardInfo = {
+  img?: string;
+  mobImg?: string;
+  alt?: string;
+  title?: string;
+  accentTitle?: string;
+  description?: string;
+  link?: string;
+  linkText?: string;
+  text?: string;
+};
+
+export const shopColectionsData: ColectionCardInfo[] = [
   {
     img: cap,
     mobImg: capMob,

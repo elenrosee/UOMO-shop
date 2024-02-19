@@ -47,18 +47,3 @@ export const LinkTo = styled(Link)`
     }
   }
 `;
-
-export const LinksList = ({ title, links }) => {
-  return (
-    <Wrapper>
-      <Title>{title}</Title>
-      <List>
-        {links.map((link, index) => (
-          <LinkTo to={`shop/${link.linkTo}`} key={index}>
-            {link.name}
-          </LinkTo>
-        ))}
-      </List>
-    </Wrapper>
-  );
-};

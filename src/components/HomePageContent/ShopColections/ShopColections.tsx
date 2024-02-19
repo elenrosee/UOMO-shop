@@ -1,53 +1,34 @@
-import styled from "styled-components";
-
-import { Breakpoints, MQ } from "../../../common";
 import { useMediaQuery } from "react-responsive";
 import { ShopCtegoriesBlock } from "./ShopCtegoriesBlock";
 import { shopColectionsData } from "../../../data/shopColectionsData";
-
-export const ShopColectionsContainer = styled.div`
-  margin-bottom: 15px;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  ${MQ(Breakpoints.lg)} {
-    margin-top: 75px;
-    margin-bottom: 75px;
-    flex-wrap: nowrap;
-  }
-`;
-
-export const Wrapper = styled.div`
-  display: flex;
-`;
+import { Breakpoints } from "../../../common";
+import { ShopColectionsContainer, Wrapper } from "./ShopColections.styled";
 
 const settings = [
   {
     width: "690px",
-    heigth: "600px",
+    height: "600px",
     color: "#F2F3F7",
     isImg: true,
     imgWidth: "473px",
   },
   {
     width: "690px",
-    heigth: "285px",
+    height: "285px",
     color: "#EAE9E7",
     isImg: true,
     imgWidth: "316px",
   },
   {
     width: "330px",
-    heigth: "285px",
+    height: "285px",
     color: "#E7E6E4",
     isImg: true,
     imgWidth: "230px",
   },
   {
     width: "330px",
-    heigth: "285px",
+    height: "285px",
     color: "#F5E6E0",
     isImg: false,
     imgWidth: "230px",
@@ -57,28 +38,28 @@ const settings = [
 const mobileSettings = [
   {
     width: `calc(100vw - 30px)`,
-    heigth: "285px",
+    height: "285px",
     color: "#F2F3F7",
     isImg: true,
     imgWidth: "307px",
   },
   {
     width: `calc(100vw - 30px)`,
-    heigth: "285px",
+    height: "285px",
     color: "#EAE9E7",
     isImg: true,
     imgWidth: "234px",
   },
   {
     width: `calc(100vw - 30px)`,
-    heigth: "285px",
+    height: "285px",
     color: "#E7E6E4",
     isImg: true,
     imgWidth: "285px",
   },
   {
     width: `calc(100vw - 30px)`,
-    heigth: "285px",
+    height: "285px",
     color: "#F5E6E0",
     isImg: false,
     imgWidth: "230px",

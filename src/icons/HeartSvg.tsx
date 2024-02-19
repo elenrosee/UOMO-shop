@@ -6,9 +6,9 @@ type HeartSvgProps = {
 };
 
 type ComponentsProps = {
-  width: string;
-  height: string;
-  accentHeart: boolean;
+  width?: string;
+  height?: string;
+  accentHeart?: boolean;
   counter?: number;
 };
 

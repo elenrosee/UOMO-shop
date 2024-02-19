@@ -11,7 +11,28 @@ import tshirt1Mob from "../images/tshirt1_mob.jpg";
 import tshirt2 from "../images/tshirt2.jpg";
 import tshirt2Mob from "../images/tshirt2_mob.jpg";
 
-export const productsData = [
+export type Product = {
+  id: string;
+  img: string[];
+  mobImg: string[];
+  alt: string;
+  category: string;
+  name: string;
+  description: string;
+  additionalInfo: string;
+  reviews: {}[];
+  sizes: string[];
+  color: string[];
+  price: number;
+  onSale: boolean;
+  discount: number;
+  rating: number;
+  salesQuantity: number;
+  stockBalance: number;
+  addedDate: string;
+};
+
+export const productsData: Product[] = [
   {
     id: "1",
     img: [bag, blondGirl, cap],
@@ -242,7 +263,6 @@ export const productsData = [
     name: "Zessi Dresses",
     description: "something about this Zessi Dresses",
     additionalInfo: "",
-    link: "/colection",
     reviews: [],
     sizes: ["xs", "s", "m", "l", "xl"],
     color: ["white", "red", "blue"],

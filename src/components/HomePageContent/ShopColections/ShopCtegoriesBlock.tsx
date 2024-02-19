@@ -1,8 +1,24 @@
 import { Breakpoints, SecondaryTitle } from "../../../common";
 import { useMediaQuery } from "react-responsive";
 import { BlockContainer, ColectionImage } from "./ShopCtegoriesBlock.styled";
+import { ColectionCardInfo } from "../../../data/shopColectionsData";
+import { FC } from "react";
 
-export const ShopCtegoriesBlock = ({ data, settings }) => {
+type ShopCategoriesBlockProps = {
+  settings: {
+    width: string;
+    height: string;
+    color: string;
+    isImg: boolean;
+    imgWidth: string;
+  };
+  data: ColectionCardInfo;
+};
+
+export const ShopCtegoriesBlock: FC<ShopCategoriesBlockProps> = ({
+  data,
+  settings,
+}) => {
   const isMobileOrTablet = useMediaQuery({ maxWidth: Breakpoints.lg - 1 });
   const isDesctop = useMediaQuery({ minWidth: Breakpoints.lg });
 

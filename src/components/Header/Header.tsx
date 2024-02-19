@@ -16,17 +16,15 @@ import { Breakpoints } from "../../common";
 import { getUserWishlist } from "../../redux/user/userSelectors";
 
 export const Header = () => {
-  const [isOpenMobileNavBar, setIsOpenMobileNavBar] = useState(false);
+  const [isOpenMobileNavBar, setIsOpenMobileNavBar] = useState<boolean>(false);
 
-  const userWishListQuantity = useSelector(getUserWishlist).length;
+  const userWishListQuantity: number = useSelector(getUserWishlist).length;
 
-  const isMobileOrTablet = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
+  const openMobileNavBarToggle = () => setIsOpenMobileNavBar((prev) => !prev);
 
-  const openMobileNavBarToggle = () => {
-    isOpenMobileNavBar
-      ? setIsOpenMobileNavBar(false)
-      : setIsOpenMobileNavBar(true);
-  };
+  const isMobileOrTablet: boolean = useMediaQuery({
+    maxWidth: Breakpoints.md - 1,
+  });
 
   return (
     <>

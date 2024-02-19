@@ -5,6 +5,7 @@ import motorbiker from "../../../images/motorbiker.jpg";
 import motorbikerMob from "../../../images/motorbiker_mob.jpg";
 import girlOnRed from "../../../images/girl_on_red.jpg";
 import girlOnRedMob from "../../../images/girl_on_red_mob.jpg";
+
 import {
   BannerItem,
   Description,
@@ -25,7 +26,9 @@ export const Banner = () => {
         <TitleContainer className={"accentBanner"}>
           <Description>STARTING AT $19</Description>
           <Title>Women’s T-Shirts</Title>
-          <SlideLink className={"accentBanner"}>Shop Now</SlideLink>
+          <SlideLink to={"/shop/new-in"} className={"accentBanner"}>
+            Shop Now
+          </SlideLink>
         </TitleContainer>
         {isMobile && (
           <Img
@@ -43,7 +46,7 @@ export const Banner = () => {
         <TitleContainer>
           <Description>STARTİNG AT $39</Description>
           <Title>Men’s Sportswear</Title>
-          <SlideLink>Shop Now</SlideLink>
+          <SlideLink to={"/shop/new-in"}>Shop Now</SlideLink>
         </TitleContainer>
         {isMobile && <Img src={motorbikerMob} alt={"motobiker"} />}
         {isDesctop && <Img src={motorbiker} alt={"motobiker"} />}
