@@ -1,7 +1,6 @@
 import { Breakpoints, MQ } from "../../../common";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Timer } from "./Timer";
 
 export const Wrapper = styled.div`
   margin-left: 15px;
@@ -17,7 +16,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-const TitleContainer = styled.div`
+export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
@@ -29,7 +28,7 @@ const TitleContainer = styled.div`
   }
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   font-weight: 500;
   color: #c32929;
   position: relative;
@@ -66,7 +65,7 @@ export const AccentTitle = styled(Title)`
   font-weight: 700;
 `;
 
-const SlideLink = styled(Link)`
+export const SlideLink = styled(Link)`
   font-weight: 500;
   position: relative;
 
@@ -81,18 +80,3 @@ const SlideLink = styled(Link)`
     bottom: -2px;
   }
 `;
-
-export const TimerComponent = () => {
-  return (
-    <Wrapper>
-      <TitleContainer>
-        <Description>DEAL OF THE WEEK</Description>
-        <AccentTitle>Spring</AccentTitle>
-        <Title>Collection</Title>
-        <SlideLink to={"/shop/new-in"}>SHOP NOW</SlideLink>
-      </TitleContainer>
-
-      <Timer targetDate={new Date("May 1, 2023")} />
-    </Wrapper>
-  );
-};

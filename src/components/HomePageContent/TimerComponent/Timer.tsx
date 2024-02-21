@@ -1,14 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, FC } from "react";
 import { TimeLabel, TimeUnit, TimeValue, TimeWrapper } from "./Timer.styled";
 
-export const Timer = ({ targetDate }) => {
-  const [timeLefted, setTimeLefted] = useState(null);
-  const intervalID = useRef(null);
+type TimerProps = {
+  targetDate: Date;
+};
+
+export const Timer: FC<TimerProps> = ({ targetDate }) => {
+  const [timeLefted, setTimeLefted] = useState<number>(1);
+  const intervalID = useRef<NodeJS.Timeout | number>(1);
 
   useEffect(() => {
     intervalID.current = setInterval(() => {
-      const currentTime = new Date();
-      setTimeLefted(targetDate - currentTime);
+      const currentTime = new Date().getTime();
+      setTimeLefted(targetDate.getTime() - currentTime);
     }, 1000);
 
     if (timeLefted === 0) {
@@ -23,7 +27,7 @@ export const Timer = ({ targetDate }) => {
 
   const days = Math.floor(timeLefted / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
-    (timeLefted % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    (timeLefted % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
   );
   const mins = Math.floor((timeLefted % (1000 * 60 * 60)) / (1000 * 60));
   const sec = Math.floor((timeLefted % (1000 * 60)) / 1000);

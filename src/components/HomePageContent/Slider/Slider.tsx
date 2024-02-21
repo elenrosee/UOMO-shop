@@ -1,18 +1,31 @@
-import { createContext, useCallback, useEffect, useState } from "react";
-import { FollowUs } from "./FollowUs";
+import { FC, TouchEvent, useCallback, useEffect, useState } from "react";
+
 import { Dots } from "./Dots";
 import { SlidesList } from "./SlidesList";
 import { SliderContainer, SliderWraper } from "./Slider.styled";
 import { useMediaQuery } from "react-responsive";
 import { images } from "../../../data/sliderData";
 import { Breakpoints } from "../../../common";
+import { FollowUs } from "../FollowUs";
+import { SliderProvider } from "./SliderProvider";
 
-export const SliderContext = createContext();
+type SliderProps = {
+  autoPlay: boolean;
+  autoPlayTime: number;
+};
+export type SliderItemsInfo = {
+  accentTitle: string;
+  description: string;
+  img: string;
+  link: string;
+  mobImg: string;
+  title: string;
+};
 
-export const Slider = ({ width, height, autoPlay, autoPlayTime = 3000 }) => {
-  const [items, setItems] = useState([]);
-  const [slide, setSlide] = useState(0);
-  const [touchPosition, setTouchPosition] = useState(null);
+export const Slider: FC<SliderProps> = ({ autoPlay, autoPlayTime = 3000 }) => {
+  const [items, setItems] = useState<SliderItemsInfo[]>([]);
+  const [slide, setSlide] = useState<number>(0);
+  const [touchPosition, setTouchPosition] = useState<number | null>(null);
 
   useEffect(() => {
     // const loadData = async () => {
@@ -39,20 +52,20 @@ export const Slider = ({ width, height, autoPlay, autoPlayTime = 3000 }) => {
 
       setSlide(slideNumber);
     },
-    [items.length, slide]
+    [items.length, slide],
   );
 
-  const goToSlide = (number) => {
+  const goToSlide = (number: number): void => {
     setSlide(number % items.length);
   };
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: TouchEvent) => {
     const touchDown = e.touches[0].clientX;
 
     setTouchPosition(touchDown);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: TouchEvent) => {
     if (touchPosition === null) {
       return;
     }
@@ -92,7 +105,7 @@ export const Slider = ({ width, height, autoPlay, autoPlayTime = 3000 }) => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
       >
-        <SliderContext.Provider
+        <SliderProvider
           value={{
             goToSlide,
             changeSlide,
@@ -103,7 +116,7 @@ export const Slider = ({ width, height, autoPlay, autoPlayTime = 3000 }) => {
         >
           <SlidesList />
           <Dots />
-        </SliderContext.Provider>
+        </SliderProvider>
       </SliderWraper>
     </SliderContainer>
   );

@@ -2,7 +2,7 @@ import { Breakpoints, MQ } from "../../../common";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const TitleContainer = styled.div`
+export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -19,7 +19,7 @@ const TitleContainer = styled.div`
   }
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   font-weight: 500;
   color: #c32929;
   position: relative;
@@ -56,7 +56,7 @@ export const AccentTitle = styled(Title)`
   font-weight: 700;
 `;
 
-const SlideLink = styled(NavLink)`
+export const SlideLink = styled(NavLink)`
   font-weight: 500;
   position: relative;
 
@@ -71,14 +71,3 @@ const SlideLink = styled(NavLink)`
     bottom: -2px;
   }
 `;
-
-export const SliderTitle = ({ description, title, accentTitle, link }) => {
-  return (
-    <TitleContainer>
-      <Description>{description}</Description>
-      <Title>{title}</Title>
-      <AccentTitle>{accentTitle}</AccentTitle>
-      <SlideLink to={link}>discover more</SlideLink>
-    </TitleContainer>
-  );
-};
