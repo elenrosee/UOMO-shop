@@ -8,8 +8,23 @@ import {
   HeroTextContent,
   SelectedCategory,
 } from "./HeroSection.styled";
+import { FC } from "react";
 
-export const HeroSection = ({ selectedCategory, productsCategories }) => {
+type SelectedCategoryType = {
+  img: string;
+  linkTo: string;
+  name: string;
+};
+
+type HeroSectionProps = {
+  selectedCategory: SelectedCategoryType;
+  productsCategories: SelectedCategoryType[];
+};
+
+export const HeroSection: FC<HeroSectionProps> = ({
+  selectedCategory,
+  productsCategories,
+}) => {
   const isDesctop = useMediaQuery({ minWidth: Breakpoints.md });
 
   const { name, img } = selectedCategory;
@@ -25,7 +40,7 @@ export const HeroSection = ({ selectedCategory, productsCategories }) => {
               <CategoryNameLink
                 key={index}
                 to={`/shop/${item.linkTo}`}
-                className={item.name === selectedCategory.name && "active"}
+                className={item.name === selectedCategory.name ? "active" : ""}
               >
                 {item.name}
               </CategoryNameLink>

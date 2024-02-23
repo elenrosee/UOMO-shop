@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, MouseEvent } from "react";
 import { SectionsList } from "./SectionsList";
 import {
   AccentTitle,
@@ -10,15 +10,15 @@ import {
   TrendyProductsContainer,
 } from "./TrendyProducts.styled";
 
-import { productsData } from "../../../data/productsData";
+import { productsData, Product } from "../../../data/productsData";
 import { useMediaQuery } from "react-responsive";
 import { Breakpoints, SingleProductItem } from "../../../common";
 
 const sectionsName = ["all", "newarrivals", "best seller", "top rating"];
 
 export const TrendyProducts = () => {
-  const [selectedSection, setSelectedSection] = useState("all");
-  const [items, setItems] = useState([]);
+  const [selectedSection, setSelectedSection] = useState<string>("all");
+  const [items, setItems] = useState<Product[]>([]);
 
   useEffect(() => {
     const loadData = () => {
@@ -36,7 +36,7 @@ export const TrendyProducts = () => {
     loadData();
   }, [selectedSection]);
 
-  const onClick = (e) => {
+  const onClick = (e: MouseEvent<HTMLButtonElement>) => {
     setSelectedSection(e.currentTarget.name);
   };
 
@@ -60,7 +60,7 @@ export const TrendyProducts = () => {
           (item, index) =>
             index < displayQuantity && (
               <SingleProductItem item={item} key={item.id} />
-            )
+            ),
         )}
       </ProductsList>
       <LinkWraper>

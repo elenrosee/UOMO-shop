@@ -1,5 +1,8 @@
 import { Breakpoints } from "../../../common";
-import { instagramPostsImages } from "../../../data/instagramPostsImages";
+import {
+  instagramPostsImages,
+  InstagramPostDataType,
+} from "../../../data/instagramPostsImages";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import {
@@ -10,7 +13,7 @@ import {
 } from "./UomoInstagram.styled";
 
 export const UomoInstagram = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<InstagramPostDataType[]>([]);
 
   useEffect(() => {
     const loadData = () => {

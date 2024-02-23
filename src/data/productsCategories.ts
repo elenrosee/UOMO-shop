@@ -1,6 +1,12 @@
 import shotMen from "../images/shot_man.jpg";
 
-export const productsCategories = [
+export type ProductsCategoryType = {
+  name: string;
+  linkTo: string;
+  img: string;
+};
+
+export const productsCategories: ProductsCategoryType[] = [
   {
     name: "new in",
     linkTo: "new-in",

@@ -11,6 +11,15 @@ import sustainableFashion from "../images/uomo_inst/sustainable-fashion.jpg";
 import whiteHoodie from "../images/uomo_inst/white-hoodie.jpg";
 import whiteShirts from "../images/uomo_inst/white-shirts.jpg";
 
+export type InstagramPostDataType = {
+  id: number;
+  img: string;
+  alt: string;
+  link: string;
+};
+
+export type InstagramPostsImagesDataType = InstagramPostDataType[];
+
 export const instagramPostsImages = [
   {
     id: 1,

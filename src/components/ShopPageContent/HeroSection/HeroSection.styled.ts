@@ -1,6 +1,13 @@
+import { ReactNode } from "react";
 import { Breakpoints, MQ } from "../../../common";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+interface CategoryNameLinkProps {
+  className?: string;
+  children: ReactNode;
+  to: string;
+}
 
 export const HeroContainer = styled.div`
   padding-top: 30px;
@@ -56,7 +63,7 @@ export const CategoriesList = styled.div`
   justify-content: center;
 `;
 
-export const CategoryNameLink = styled(Link)`
+export const CategoryNameLink = styled(Link)<CategoryNameLinkProps>`
   background-color: transparent;
   border: none;
   font-weight: 500;

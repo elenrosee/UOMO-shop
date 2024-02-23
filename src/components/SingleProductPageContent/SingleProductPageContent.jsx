@@ -58,7 +58,7 @@ export const SingleProductPageContent = ({ product }) => {
         size: selectedSize,
         color: selectedColor,
         quantity: selectedQuantity,
-      })
+      }),
     );
   };
 
