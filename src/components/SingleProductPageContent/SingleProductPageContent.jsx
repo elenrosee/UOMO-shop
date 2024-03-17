@@ -18,12 +18,12 @@ import {
 } from "./SingleProductPageContent.styled";
 import { RelatedProducts } from "./RelatedProducts";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserWishlist } from "../../redux/user/userSelectors";
 import {
   addToShopingCart,
   addToWishList,
+  getUserWishlist,
   removeFromWishList,
-} from "../../redux/user/userActions";
+} from "../../redux";
 
 export const SingleProductPageContent = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState(null);

@@ -13,12 +13,13 @@ import { HeaderWraper, UserMenu, UserMenuBtn } from "./Header.styled";
 import { PageNavBar } from "./PageNavBar";
 import { useSelector } from "react-redux";
 import { Breakpoints } from "../../common";
-import { getUserWishlist } from "../../redux/user/userSelectors";
+import { getPurchasesQuantity, getUserWishlist } from "../../redux";
 
 export const Header = () => {
   const [isOpenMobileNavBar, setIsOpenMobileNavBar] = useState<boolean>(false);
 
   const userWishListQuantity: number = useSelector(getUserWishlist).length;
+  const purchasesQuantity: number = useSelector(getPurchasesQuantity);
 
   const openMobileNavBarToggle = () => setIsOpenMobileNavBar((prev) => !prev);
 
@@ -66,7 +67,7 @@ export const Header = () => {
             </li>
             <li>
               <UserMenuBtn>
-                <ShoppingBagSvg />
+                <ShoppingBagSvg counter={purchasesQuantity} />
               </UserMenuBtn>
             </li>
             <li>

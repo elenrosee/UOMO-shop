@@ -1,6 +1,6 @@
 import { HeartSvg, HomeSvg, ShoppingBagSvg, ShoulderSvg } from "../../../icons";
 import { useSelector } from "react-redux";
-import { getUserWishlist } from "../../../redux/user/userSelectors";
+import { getUserWishlist } from "../../../redux/userSelectors";
 import {
   BtnText,
   Item,

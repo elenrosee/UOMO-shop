@@ -2,11 +2,8 @@ import { Breakpoints } from "../../common";
 import { HeartSvg } from "../../icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
-import {
-  addToWishList,
-  removeFromWishList,
-} from "../../redux/user/userActions";
-import { getUserWishlist } from "../../redux/user/userSelectors";
+import { addToWishList, removeFromWishList } from "../../redux/userSlice";
+import { getUserWishlist } from "../../redux/userSelectors";
 import {
   AddToWishListBtn,
   PriceWrapper,
