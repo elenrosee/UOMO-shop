@@ -1,4 +1,4 @@
-import { Breakpoints } from "../../common";
+import { Breakpoints } from "..";
 import { HeartSvg } from "../../icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
@@ -14,18 +14,24 @@ import {
   ProductPrice,
   Wrapper,
 } from "./SingleProductItem.styled";
+import { ProductType } from "../../data/productsData";
+import { FC } from "react";
 
-export const SingleProductItem = ({ item }) => {
+type SingleProductItemProps = {
+  item: ProductType;
+};
+
+export const SingleProductItem: FC<SingleProductItemProps> = ({ item }) => {
   const dispatch = useDispatch();
   const wishlist = useSelector(getUserWishlist);
 
   const isInWishlist = wishlist.includes(item.id);
 
-  const addProductToWishList = (id) => {
+  const addProductToWishList = (id: string) => {
     dispatch(addToWishList(id));
   };
 
-  const removeProductFromWishList = (id) => {
+  const removeProductFromWishList = (id: string) => {
     dispatch(removeFromWishList(id));
   };
 
@@ -48,10 +54,7 @@ export const SingleProductItem = ({ item }) => {
               : addProductToWishList(id)
           }
         >
-          <HeartSvg
-            fill={"var(--secondary-text-color)"}
-            accentHeart={isInWishlist ? true : false}
-          />
+          <HeartSvg accentHeart={isInWishlist ? true : false} />
         </AddToWishListBtn>
       </Wrapper>
       <ProductNameLink to={`/single_product/${id}`}>{name}</ProductNameLink>
@@ -59,7 +62,7 @@ export const SingleProductItem = ({ item }) => {
         <ProductPrice>${price}</ProductPrice>
       ) : (
         <PriceWrapper>
-          <ProductPrice color={"var(--secondary-text-color)"}>
+          <ProductPrice $crossed={true} color={"var(--secondary-text-color)"}>
             ${price}
           </ProductPrice>
           <ProductPrice color={"var(--accent-red-color)"}>

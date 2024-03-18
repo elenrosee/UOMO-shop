@@ -1,24 +1,24 @@
-import { useEffect, useState, FC } from "react";
-import { HeroSection } from "./HeroSection";
-import { Product, productsData } from "../../data/productsData";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { ProductType, productsData } from "../../data/productsData";
 import {
   ProductsCategoryType,
   productsCategories,
 } from "../../data/productsCategories";
 import { ProductsList } from "../../common";
+import { HeroSection } from "../../components/ShopPageContent";
 
-type ShopPageContentProps = { productCategory: string };
-
-export const ShopPageContent: FC<ShopPageContentProps> = ({
-  productCategory,
-}) => {
-  const [products, setProducts] = useState<Product[]>([]);
+export const ShopView = () => {
+  const [products, setProducts] = useState<ProductType[]>([]);
   const [selectedCategory, setSelectedProductsCategory] = useState<
     ProductsCategoryType | undefined
   >(undefined);
   const [productsBySelectedCategory, setProductsBySelectedCategory] = useState<
-    Product[]
+    ProductType[]
   >([]);
+
+  const params = useParams();
+  const productCategory = params.category;
 
   useEffect(() => {
     const loadProducts = () => {
@@ -63,3 +63,14 @@ export const ShopPageContent: FC<ShopPageContentProps> = ({
     </>
   );
 };
+
+// export const ShopView = () => {
+//   const params = useParams()
+//   const productCategory = params.category
+
+//   return (
+//     <>
+//       <ShopPageContent productCategory={productCategory} />
+//     </>
+//   )
+// }

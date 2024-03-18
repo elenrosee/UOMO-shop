@@ -1,1 +1,1 @@
-export { ShopPageContent } from "./ShopPageContent";
+export { HeroSection } from "./HeroSection";

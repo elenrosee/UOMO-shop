@@ -11,7 +11,7 @@ import tshirt1Mob from "../images/tshirt1_mob.jpg";
 import tshirt2 from "../images/tshirt2.jpg";
 import tshirt2Mob from "../images/tshirt2_mob.jpg";
 
-export type Product = {
+export type ProductType = {
   id: string;
   img: string[];
   mobImg: string[];
@@ -32,7 +32,7 @@ export type Product = {
   addedDate: string;
 };
 
-export const productsData: Product[] = [
+export const productsData: ProductType[] = [
   {
     id: "1",
     img: [bag, blondGirl, cap],

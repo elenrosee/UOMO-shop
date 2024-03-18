@@ -1,5 +1,5 @@
 import { Breakpoints } from "../../common";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import {
   AllImages,
@@ -8,7 +8,13 @@ import {
   MainImage,
 } from "./ProductImages.styled";
 
-export const ProductImages = ({ img, mobImg, alt }) => {
+type ProductImagesProps = {
+  img: string[];
+  mobImg: string[];
+  alt: string;
+};
+
+export const ProductImages: FC<ProductImagesProps> = ({ img, mobImg, alt }) => {
   const [focusedImgIndex, setFocusedImgIndex] = useState(0);
 
   const isMobile = useMediaQuery({ maxWidth: Breakpoints.md - 1 });
@@ -22,7 +28,7 @@ export const ProductImages = ({ img, mobImg, alt }) => {
             return (
               <Img
                 onClick={() => setFocusedImgIndex(index)}
-                className={focusedImgIndex === index && "focused"}
+                className={`${focusedImgIndex === index && "focused"}`}
                 src={img}
                 alt={alt}
                 key={index}
@@ -34,7 +40,7 @@ export const ProductImages = ({ img, mobImg, alt }) => {
             return (
               <Img
                 onClick={() => setFocusedImgIndex(index)}
-                className={focusedImgIndex === index && "focused"}
+                className={`${focusedImgIndex === index && "focused"}`}
                 src={img}
                 alt={alt}
                 key={index}

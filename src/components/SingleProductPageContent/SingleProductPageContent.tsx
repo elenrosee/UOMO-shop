@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 
 import { PriceWrapper } from "../../common/SinglProductItem/SingleProductItem.styled";
 import { HeartSvg } from "../../icons";
@@ -24,11 +24,18 @@ import {
   getUserWishlist,
   removeFromWishList,
 } from "../../redux";
+import { ProductType } from "../../data/productsData";
 
-export const SingleProductPageContent = ({ product }) => {
-  const [selectedSize, setSelectedSize] = useState(null);
-  const [selectedColor, setSelectedColor] = useState(null);
-  const [selectedQuantity, setSelectedQuantity] = useState(1);
+type SingleProductPageContentProps = {
+  product: ProductType;
+};
+
+export const SingleProductPageContent: FC<SingleProductPageContentProps> = ({
+  product,
+}) => {
+  const [selectedSize, setSelectedSize] = useState<string>("");
+  const [selectedColor, setSelectedColor] = useState<string>("");
+  const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
 
   const dispatch = useDispatch();
   const wishlist = useSelector(getUserWishlist);
@@ -62,7 +69,9 @@ export const SingleProductPageContent = ({ product }) => {
     );
   };
 
-  const changeQuantity = (e) => {
+  const changeQuantity = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
     if (e.currentTarget.name === "less" && selectedQuantity > 0) {
       setSelectedQuantity(selectedQuantity - 1);
     } else if (
@@ -101,7 +110,7 @@ export const SingleProductPageContent = ({ product }) => {
             <Price>${price}</Price>
           ) : (
             <PriceWrapper>
-              <Price crossedOut={true} color={"var(--secondary-text-color)"}>
+              <Price $crossed={true} color={"var(--secondary-text-color)"}>
                 ${price}
               </Price>
               <Price color="var(--accent-red-color)">${price - discount}</Price>

@@ -1,4 +1,3 @@
-// import { Breakpoints, MQ } from '../../common'
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Breakpoints, MQ } from "../Breakpoints";
@@ -74,10 +73,12 @@ export const PriceWrapper = styled.div`
 
 type ProductPriceProps = {
   color?: string;
+  $crossed?: boolean;
 };
 
 export const ProductPrice = styled.p<ProductPriceProps>`
-  text-decoration: ${({ color }) => (color ? "line-through 2px" : "none")};
+  text-decoration: ${({ $crossed }) =>
+    $crossed ? "line-through 2px" : "none"};
   color: ${({ color }) => (!color ? "#222" : color)};
   font-size: 16px;
 

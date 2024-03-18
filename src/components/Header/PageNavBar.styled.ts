@@ -24,12 +24,12 @@ export const NavBarWrapper = styled.div`
 export const PageNavLink = styled(NavLink)`
   font-weight: 500;
 
-  :not(:last-child) {
+  &:not(:last-child) {
     margin-bottom: 20px;
   }
 
   ${MQ(Breakpoints.md)} {
-    :not(:last-child) {
+    &:not(:last-child) {
       margin-bottom: 0px;
       margin-right: 30px;
     }

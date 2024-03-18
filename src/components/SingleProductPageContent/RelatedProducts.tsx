@@ -5,16 +5,21 @@ import {
   TitleWrapper,
 } from "../HomePageContent/LimitedEdition/LimitedEdition.styled";
 
-import { productsData } from "../../data/productsData";
-import { useEffect, useState } from "react";
+import { ProductType, productsData } from "../../data/productsData";
+import { FC, useEffect, useState } from "react";
 
-export const RelatedProducts = ({ category, id }) => {
-  const [relatedProducts, setRelatedProducts] = useState([]);
+type RelatedProductsType = {
+  category: string;
+  id: string;
+};
+
+export const RelatedProducts: FC<RelatedProductsType> = ({ category, id }) => {
+  const [relatedProducts, setRelatedProducts] = useState<ProductType[]>([]);
 
   useEffect(() => {
     const loadProductData = () => {
       const relatedProducts = productsData.filter(
-        (item) => item.id !== id && item.category === category
+        (item) => item.id !== id && item.category === category,
       );
 
       setRelatedProducts(relatedProducts);

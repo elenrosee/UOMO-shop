@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 import {
   SizesWrapper,
   Text,
@@ -5,7 +7,17 @@ import {
   SizesList,
 } from "./ProductSizeList.styled";
 
-export const ProductSizeList = ({ sizes, selectedSize, setSelectedSize }) => {
+type ProductSizeListProps = {
+  sizes: string[];
+  selectedSize: string;
+  setSelectedSize: (size: string) => void;
+};
+
+export const ProductSizeList: FC<ProductSizeListProps> = ({
+  sizes,
+  selectedSize,
+  setSelectedSize,
+}) => {
   return (
     <SizesWrapper>
       <Text>sizes</Text>
@@ -14,7 +26,7 @@ export const ProductSizeList = ({ sizes, selectedSize, setSelectedSize }) => {
           <SizesItem
             onClick={() => setSelectedSize(size)}
             key={index}
-            className={selectedSize === size && "active"}
+            className={`${selectedSize === size && "active"}`}
           >
             {size}
           </SizesItem>

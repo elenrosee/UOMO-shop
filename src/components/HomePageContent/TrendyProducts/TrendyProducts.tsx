@@ -10,7 +10,7 @@ import {
   TrendyProductsContainer,
 } from "./TrendyProducts.styled";
 
-import { productsData, Product } from "../../../data/productsData";
+import { productsData, ProductType } from "../../../data/productsData";
 import { useMediaQuery } from "react-responsive";
 import { Breakpoints, SingleProductItem } from "../../../common";
 
@@ -18,7 +18,7 @@ const sectionsName = ["all", "newarrivals", "best seller", "top rating"];
 
 export const TrendyProducts = () => {
   const [selectedSection, setSelectedSection] = useState<string>("all");
-  const [items, setItems] = useState<Product[]>([]);
+  const [items, setItems] = useState<ProductType[]>([]);
 
   useEffect(() => {
     const loadData = () => {

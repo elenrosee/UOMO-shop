@@ -1,5 +1,5 @@
 import { Breakpoints, SingleProductItem } from "../../../common";
-import { Product, productsData } from "../../../data/productsData";
+import { ProductType, productsData } from "../../../data/productsData";
 import { FC, useCallback, useEffect, useState, TouchEvent } from "react";
 import { useMediaQuery } from "react-responsive";
 
@@ -17,11 +17,11 @@ import {
 import { NextSvg, BackSvg } from "../../../icons";
 
 interface LimitedEditionProps {
-  autoPlay: boolean;
-  autoPlayTime: number;
+  autoPlay?: boolean;
+  autoPlayTime?: number;
 }
 
-type ItemsArraySliderType = Product[][];
+type ItemsArraySliderType = ProductType[][];
 
 export const LimitedEdition: FC<LimitedEditionProps> = ({
   autoPlay = true,

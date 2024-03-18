@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 import { Link } from "react-router-dom";
-import { Breakpoints, MQ } from "../../common";
+import { Breakpoints, MQ } from "..";
 
-const TitleContainer = styled.div`
+export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -20,11 +20,11 @@ const TitleContainer = styled.div`
   }
 `;
 
-const Description = styled.span`
+export const Description = styled.span`
   font-weight: 500;
   text-transform: uppercase;
 `;
-const TitleWrapper = styled.div`
+export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -33,7 +33,7 @@ const TitleWrapper = styled.div`
   }
 `;
 
-const Title = styled.h4`
+export const Title = styled.h4`
   text-transform: uppercase;
   font-weight: 400;
   font-size: 22px;
@@ -45,11 +45,11 @@ const Title = styled.h4`
   }
 `;
 
-const Text = styled.p`
+export const Text = styled.p`
   text-transform: none;
 `;
 
-const SlideLink = styled(Link)`
+export const SlideLink = styled(Link)`
   font-weight: 500;
   position: relative;
 
@@ -67,27 +67,6 @@ const SlideLink = styled(Link)`
   }
 `;
 
-const AccentTitle = styled(Title)`
+export const AccentTitle = styled(Title)`
   font-weight: 700;
 `;
-
-export const SecondaryTitle = ({
-  description,
-  title,
-  accentTitle,
-  link,
-  linkText,
-  text,
-}) => {
-  return (
-    <TitleContainer>
-      <Description>{description}</Description>
-      <TitleWrapper>
-        <AccentTitle>{accentTitle}&nbsp;</AccentTitle>
-        <Title>{title}</Title>
-      </TitleWrapper>
-      <Text>{text}</Text>
-      <SlideLink to={link}>{linkText}</SlideLink>
-    </TitleContainer>
-  );
-};

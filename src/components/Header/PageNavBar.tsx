@@ -29,7 +29,7 @@ export const PageNavBar: FC<PageNavBarProps> = ({
         SHOP
       </PageNavLink>
       <PageNavLink
-        to="/colection"
+        to="/collection"
         onClick={() =>
           typeof openMobileNavBarToggle === "function" &&
           openMobileNavBarToggle()

@@ -1,3 +1,4 @@
+import { FC } from "react";
 import {
   ColorsWrapper,
   Text,
@@ -6,7 +7,13 @@ import {
   ColorBtn,
 } from "./ProductColorsList.styled";
 
-export const ProductColorsList = ({
+type ProductColorsListProps = {
+  color: string[];
+  selectedColor: string;
+  setSelectedColor: (color: string) => void;
+};
+
+export const ProductColorsList: FC<ProductColorsListProps> = ({
   color,
   selectedColor,
   setSelectedColor,
@@ -17,7 +24,7 @@ export const ProductColorsList = ({
       <ColorList>
         {color.map((color, index) => (
           <ColorItem
-            className={selectedColor === color && "active"}
+            className={`${selectedColor === color && "active"}`}
             key={index}
           >
             <ColorBtn color={color} onClick={() => setSelectedColor(color)} />

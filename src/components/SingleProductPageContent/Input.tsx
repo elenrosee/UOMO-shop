@@ -3,9 +3,7 @@ import { InputBtn, Quantity, QuantityInput } from "./Input.styled";
 
 type InputProps = {
   selectedQuantity: number;
-  changeQuantity: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-  ) => void;
+  changeQuantity: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 export const Input: React.FC<InputProps> = ({
