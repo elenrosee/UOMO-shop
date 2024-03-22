@@ -42,10 +42,12 @@ export const Header = () => {
             <UserMenuBtn onClick={openMobileNavBarToggle}>
               <NavIconSvg />
             </UserMenuBtn>
-            <LogoSvg />
-            <UserMenuBtn>
+            <UserMenuNavLink to="/">
+              <LogoSvg />
+            </UserMenuNavLink>
+            <UserMenuNavLink to="/cart">
               <ShoppingBagSvg counter={purchasesQuantity} />
-            </UserMenuBtn>
+            </UserMenuNavLink>
           </HeaderWraper>
           {isOpenMobileNavBar && (
             <PageNavBar
@@ -58,7 +60,9 @@ export const Header = () => {
       )}
       {!isMobileOrTablet && (
         <HeaderWraper>
-          <LogoSvg />
+          <UserMenuNavLink to="/">
+            <LogoSvg />
+          </UserMenuNavLink>
           <PageNavBar
             openPagesMenu={openPagesMenu}
             isOpenPagesMenu={isOpenPagesMenu}

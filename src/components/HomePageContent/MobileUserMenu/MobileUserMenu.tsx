@@ -1,6 +1,9 @@
 import { HeartSvg, HomeSvg, ShoppingBagSvg, ShoulderSvg } from "../../../icons";
 import { useSelector } from "react-redux";
-import { getUserWishlist } from "../../../redux/userSelectors";
+import {
+  getPurchasesQuantity,
+  getUserWishlist,
+} from "../../../redux/userSelectors";
 import {
   BtnText,
   Item,
@@ -8,9 +11,11 @@ import {
   MenuLink,
   Wrapper,
 } from "./MobileUserMenu.styled";
+import { UserMenuNavLink } from "../../Header/Header.styled";
 
 export const MobileUserMenu = () => {
   const wishListLangth: number = useSelector(getUserWishlist).length;
+  const purchasesQuantity: number = useSelector(getPurchasesQuantity);
 
   return (
     <Wrapper>
@@ -33,10 +38,10 @@ export const MobileUserMenu = () => {
         </MenuBtn>
       </Item>
       <Item>
-        <MenuBtn>
-          <ShoppingBagSvg />
+        <UserMenuNavLink to="/cart">
+          <ShoppingBagSvg counter={purchasesQuantity} />
           <BtnText>Cart</BtnText>
-        </MenuBtn>
+        </UserMenuNavLink>
       </Item>
     </Wrapper>
   );
