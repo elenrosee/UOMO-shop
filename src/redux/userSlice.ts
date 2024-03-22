@@ -11,6 +11,8 @@ type UserPurchaseProductType = {
   size: string;
   color: string;
   quantity: number;
+  img: string[];
+  mobImg: string[];
 };
 
 type StateType = {
@@ -55,9 +57,7 @@ const userSlice = createSlice({
 
       if (stateProduct) {
         const newStateProduct = {
-          id,
-          size,
-          color,
+          ...action.payload,
           quantity: (stateProduct.quantity += quantity),
         };
 

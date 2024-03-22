@@ -9,7 +9,12 @@ import {
   ShoppingBagSvg,
   UserSvg,
 } from "../../icons";
-import { HeaderWraper, UserMenu, UserMenuBtn } from "./Header.styled";
+import {
+  HeaderWraper,
+  UserMenu,
+  UserMenuBtn,
+  UserMenuNavLink,
+} from "./Header.styled";
 import { PageNavBar } from "./PageNavBar";
 import { useSelector } from "react-redux";
 import { Breakpoints } from "../../common";
@@ -17,11 +22,13 @@ import { getPurchasesQuantity, getUserWishlist } from "../../redux";
 
 export const Header = () => {
   const [isOpenMobileNavBar, setIsOpenMobileNavBar] = useState<boolean>(false);
+  const [isOpenPagesMenu, setIsOpenPagesMenu] = useState<boolean>(false);
 
   const userWishListQuantity: number = useSelector(getUserWishlist).length;
   const purchasesQuantity: number = useSelector(getPurchasesQuantity);
 
   const openMobileNavBarToggle = () => setIsOpenMobileNavBar((prev) => !prev);
+  const openPagesMenu = () => setIsOpenPagesMenu((prev) => !prev);
 
   const isMobileOrTablet: boolean = useMediaQuery({
     maxWidth: Breakpoints.md - 1,
@@ -37,18 +44,25 @@ export const Header = () => {
             </UserMenuBtn>
             <LogoSvg />
             <UserMenuBtn>
-              <ShoppingBagSvg />
+              <ShoppingBagSvg counter={purchasesQuantity} />
             </UserMenuBtn>
           </HeaderWraper>
           {isOpenMobileNavBar && (
-            <PageNavBar openMobileNavBarToggle={openMobileNavBarToggle} />
+            <PageNavBar
+              openMobileNavBarToggle={openMobileNavBarToggle}
+              openPagesMenu={openPagesMenu}
+              isOpenPagesMenu={isOpenPagesMenu}
+            />
           )}
         </>
       )}
       {!isMobileOrTablet && (
         <HeaderWraper>
           <LogoSvg />
-          <PageNavBar />
+          <PageNavBar
+            openPagesMenu={openPagesMenu}
+            isOpenPagesMenu={isOpenPagesMenu}
+          />
           <UserMenu>
             <li>
               <UserMenuBtn>
@@ -61,14 +75,14 @@ export const Header = () => {
               </UserMenuBtn>
             </li>
             <li>
-              <UserMenuBtn>
+              <UserMenuNavLink to="/cart">
                 <HeartSvg counter={userWishListQuantity} />
-              </UserMenuBtn>
+              </UserMenuNavLink>
             </li>
             <li>
-              <UserMenuBtn>
+              <UserMenuNavLink to="/cart">
                 <ShoppingBagSvg counter={purchasesQuantity} />
-              </UserMenuBtn>
+              </UserMenuNavLink>
             </li>
             <li>
               <UserMenuBtn>

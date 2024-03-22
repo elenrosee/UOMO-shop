@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Breakpoints, Container, MQ } from "../../common";
+import { NavLink } from "react-router-dom";
 
 export const HeaderWraper = styled(Container)`
   display: flex;
@@ -34,6 +35,11 @@ export const UserMenu = styled.ul`
 `;
 
 export const UserMenuBtn = styled.button`
+  background: inherit;
+  border: none;
+`;
+
+export const UserMenuNavLink = styled(NavLink)`
   background: inherit;
   border: none;
 `;

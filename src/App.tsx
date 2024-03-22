@@ -8,6 +8,7 @@ import { Footer, Header } from "./components";
 import { HomeView } from "./views/HomeView";
 import { ShopView } from "./views/ShopView";
 import { SingleProductView } from "./views/SingleProductView";
+import { CartView } from "./views/CartView";
 
 function App() {
   return (
@@ -20,10 +21,10 @@ function App() {
           <Route path="/home" element={<HomeView />} />
           <Route path="/shop/:category" element={<ShopView />} />
           <Route path="/single_product/:id" element={<SingleProductView />} />
+          <Route path="/cart" element={<CartView />} />
           <Route path="/collection" element={<HomeView />} />
           <Route path="/journal" element={<HomeView />} />
           <Route path="/lookbook" element={<HomeView />} />
-          <Route path="/pages" element={<HomeView />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />

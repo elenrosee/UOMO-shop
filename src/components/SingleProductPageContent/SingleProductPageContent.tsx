@@ -65,6 +65,8 @@ export const SingleProductPageContent: FC<SingleProductPageContentProps> = ({
         size: selectedSize,
         color: selectedColor,
         quantity: selectedQuantity,
+        img: product.img,
+        mobImg: product.mobImg,
       }),
     );
   };

@@ -24,14 +24,17 @@ export const SvgWrapper = styled.div<HeartSvgProps>`
     color: white;
     background-color: #b9a16b;
 
-    padding: 1px;
     min-width: 16px;
     height: 16px;
     border-radius: 20px;
 
     position: absolute;
     left: 8px;
-    bottom: -3px;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

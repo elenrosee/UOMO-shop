@@ -3,10 +3,14 @@ import { NavBarWrapper, PageNavLink } from "./PageNavBar.styled";
 
 interface PageNavBarProps {
   openMobileNavBarToggle?: () => void;
+  openPagesMenu: () => void;
+  isOpenPagesMenu: boolean;
 }
 
 export const PageNavBar: FC<PageNavBarProps> = ({
   openMobileNavBarToggle = false,
+  openPagesMenu,
+  isOpenPagesMenu,
 }) => {
   return (
     <NavBarWrapper>
@@ -28,7 +32,14 @@ export const PageNavBar: FC<PageNavBarProps> = ({
       >
         SHOP
       </PageNavLink>
-      <PageNavLink
+
+      {/* <PagesMenuBtn
+        className={isOpenPagesMenu ? 'active' : ''}
+        onClick={openPagesMenu}
+      >
+        PAGES
+      </PagesMenuBtn> */}
+      {/* <PageNavLink
         to="/collection"
         onClick={() =>
           typeof openMobileNavBarToggle === "function" &&
@@ -45,22 +56,13 @@ export const PageNavBar: FC<PageNavBarProps> = ({
         }
       >
         JOURNAL
-      </PageNavLink>
+      </PageNavLink> */}
       {/* <PageNavLink
         to="/lookbook"
         onClick={() => openMobileNavBarToggle && openMobileNavBarToggle()}
       >
         LOOKBOOK
       </PageNavLink> */}
-      <PageNavLink
-        to="/pages"
-        onClick={() =>
-          typeof openMobileNavBarToggle === "function" &&
-          openMobileNavBarToggle()
-        }
-      >
-        PAGES
-      </PageNavLink>
     </NavBarWrapper>
   );
 };

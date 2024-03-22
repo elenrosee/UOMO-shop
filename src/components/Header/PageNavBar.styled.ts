@@ -23,16 +23,44 @@ export const NavBarWrapper = styled.div`
 
 export const PageNavLink = styled(NavLink)`
   font-weight: 500;
-
-  &:not(:last-child) {
-    margin-bottom: 20px;
-  }
+  margin-bottom: 10px;
+  margin-top: 10px;
 
   ${MQ(Breakpoints.md)} {
-    &:not(:last-child) {
-      margin-bottom: 0px;
-      margin-right: 30px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  &.active {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      background-color: black;
+      width: 26px;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
     }
+  }
+`;
+
+export const PagesMenuBtn = styled.button`
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+  ${MQ(Breakpoints.md)} {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-right: 15px;
+    margin-left: 15px;
   }
 
   &.active {
