@@ -1,18 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-
+import { ProductType } from "../data/productsData";
 type UserType = {
   name: string | null;
   email: string | null;
 };
 
-type UserPurchaseProductType = {
-  id: string;
+type UserPurchaseProductType = ProductType & {
   size: string;
-  color: string;
   quantity: number;
-  img: string[];
-  mobImg: string[];
 };
 
 type StateType = {

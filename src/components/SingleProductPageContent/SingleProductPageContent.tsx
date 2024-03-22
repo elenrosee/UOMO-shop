@@ -61,12 +61,10 @@ export const SingleProductPageContent: FC<SingleProductPageContentProps> = ({
 
     dispatch(
       addToShopingCart({
-        id: product.id,
+        ...product,
         size: selectedSize,
-        color: selectedColor,
+        color: [selectedColor],
         quantity: selectedQuantity,
-        img: product.img,
-        mobImg: product.mobImg,
       }),
     );
   };

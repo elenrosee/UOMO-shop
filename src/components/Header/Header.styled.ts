@@ -13,10 +13,9 @@ export const HeaderWraper = styled(Container)`
   padding: 15px;
 
   ${MQ(Breakpoints.md)} {
-    justify-content: space-around;
-
     height: 36px;
-    padding: 30px 0 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 `;
 

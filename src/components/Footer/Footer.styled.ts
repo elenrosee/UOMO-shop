@@ -17,6 +17,6 @@ export const Wrapper = styled(Container)`
   border-bottom: solid 1px gray;
 
   ${MQ(Breakpoints.md)} {
-    justify-content: space-around;
+    justify-content: space-between;
   }
 `;
